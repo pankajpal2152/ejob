@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Digital Clock</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        #txt {
+            font-size: 40px;
+            font-family: Arial;
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+
+    <script type="text/javascript">
+        function startTime() {
+            var today = new Date();
+
+            var h = today.getHours();   // 0 - 23
+            var m = today.getMinutes(); // 0 - 59
+            var s = today.getSeconds(); // 0 - 59
+
+            // add zero before numbers < 10
+            m = checkTime(m);
+            s = checkTime(s);
+
+            document.getElementById("txt").innerHTML =
+                h + ":" + m + ":" + s;
+
+            setTimeout(startTime, 1000); // update every 1 second
+        }
+
+        function checkTime(i) {
+            if (i < 10) {
+                i = "0" + i;
+            }
+            return i;
+        }
+    </script>
+</head>
+
+<body onload="startTime()">
+
+    <div id="txt">
+    </div>
+
+</body>
+
+</html>

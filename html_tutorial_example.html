@@ -1,0 +1,1247 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+        My Untitled HTML CSS Form with JavaScript Tutorial Example Document Page
+    </title>
+
+    <link rel="stylesheet" href="whatever.css" type="text/css">
+
+    <style type="text/css">
+        body {
+            background-color: orange;
+        }
+
+        B.headline {
+            color: violet;
+            font-size: 22px;
+            font-family: arial;
+            text-decoration: underline
+        }
+
+        B {
+            font-family: arial;
+            font-size: 14px;
+            color: indigo
+        }
+
+        .headline {
+            font-family: arial;
+            font-size: 14px;
+            color: blue
+        }
+
+        #layer1 {
+            position: absolute;
+            left: 100;
+            top: 100;
+            z-index: 0;
+        }
+
+        #layer2 {
+            position: absolute;
+            left: 140;
+            top: 140;
+            z-index: 1;
+        }
+
+        .headlines,
+        .sublines,
+        .infotext {
+            font-family: arial;
+            color: black;
+            background: yellow;
+            font-weight: bold;
+        }
+
+        .headlines {
+            font-size: 14pt;
+        }
+
+        .sublines {
+            font-size: 12pt;
+        }
+
+        .infotext {
+            font-size: 10pt;
+        }
+
+        .layer-relative-1 {
+            position: relative;
+            font-size: 50px;
+            z-index: 2;
+        }
+
+        .layer-relative-2 {
+            position: relative;
+            top: -50px;
+            left: 5px;
+            color: violet;
+            font-size: 80px;
+            z-index: 1;
+        }
+
+        .layer-relative-3 {
+            position: relative;
+            font-size: 50px;
+            z-index: 3;
+        }
+
+        .layer-relative-4 {
+            position: relative;
+            top: -50px;
+            left: 5px;
+            color: indigo;
+            font-size: 80px;
+            z-index: 4;
+        }
+
+        .hidden-layer {
+            position: relative;
+            visibility: hidden;
+        }
+
+        A:link {
+            text-decoration: none
+        }
+
+        A:visited {
+            text-decoration: none
+        }
+
+        A:active {
+            text-decoration: none
+        }
+
+        A:hover {
+            text-decoration: underline;
+            color: green;
+        }
+
+        A:link {
+            text-decoration: none
+        }
+
+        A:visited {
+            text-decoration: none
+        }
+
+        A:active {
+            text-decoration: none
+        }
+
+        A:hover {
+            text-decoration: underline overline;
+            color: red;
+        }
+
+        .html-colors {
+            border: 1px blue solid;
+            color: #0000ff;
+        }
+
+        .not-text {
+            font-size: 16px;
+        }
+    </style>
+
+
+
+    <script type="text/javascript">
+
+        // alert("Warning Message");
+
+        // var retVal = confirm("Do you want to continue?");
+        // if (retVal == true) {
+        //     alert("User wants to continue!");
+        //     return true;
+        // } else {
+        //     alert("User does not want to continue!");
+        //     return false;
+        // }
+
+        // var retVal = prompt("Enter your name : ", "your name here");
+        // alert("You have entered : " + retVal);
+
+        /* If the time is less than 10, you will get a "Good morning" greeting.
+        Otherwise you will get a "Good day" greeting. */
+
+        // var d = new Date()
+        // var time = d.getHours();
+        // if (time < 10) {
+        //     document.write("Good Morning!");
+        // } else {
+        //     document.write("Good Day!");
+        // }
+
+        // var i = 0;
+        // for (i = 0; i <= 5; i++) {
+        //     document.write("The number is " + i);
+        //     document.write("<br />");
+        // }
+
+        // var i=0;
+        // while(i<=5){
+        //     document.write("The number is " +i);
+        //     document.write("<br/>");
+        //     i++;
+        // }
+
+        // function valid() {
+        //     var n = document.f1.user.value;
+        //     if (n == "") {
+        //         alert("Please Enter Username");
+        //         return false;
+        //     }
+        //     if (!isNaN(n)) {
+        //         alert("Please Enter your user name in text");
+        //         return false;
+        //     }
+
+        //     var a = document.f1.pwd.value;
+        //     if (a == "") {
+        //         alert("Please enter your password");
+        //         return false;
+        //     }
+
+        //     var b = document.f1.pwd1.value;
+        //     if (b == "") {
+        //         alert("Please Enter Confirm Password Field");
+        //         return false;
+        //     }
+
+        //     if (a != b) {
+        //         alert("Please Enter same password in both the fields");
+        //         return false;
+        //     }
+
+        //     var c = document.f1.gen[0].checked;
+        //     var d = document.f1.gen[1].checked;
+        //     if (!c && !d) {
+        //         alert("Please Enter Gender");
+        //         return false;
+        //     }
+
+        //     var f = document.f1.farea.value;
+        //     if (f == "Please Select") {
+        //         alert("Please Select a functional Area");
+        //         return false;
+        //     }
+
+        //     var p = document.f1.no.value;
+        //     if (p == "") {
+        //         alert("Please enter Phone Number");
+        //         return false;
+        //     }
+        //     if (isNaN(p)) {
+        //         alert("No Character in Phone area");
+        //         return false;
+        //     }
+        //     if (p.length < 10) {
+        //         alert("Please enter A valid phone number");
+        //         return false;
+        //     }
+        //     if (p.charAt(0) != 9 && p.charAt(0) != 0 && p.charAt(0) != 2) {
+        //         alert("Please Start With 9, 0 or 2");
+        //         return false;
+        //     }
+
+        //     var x = document.f1.email.value;
+        //     var atpos = x.indexOf("@");
+        //     var dotpos = x.lastIndexOf(".");
+        //     if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= x.length) {
+        //         alert("Not a valid e - mail address");
+        //         return false;
+        //     }
+
+        //     /* ✅ ADDED: log form data to console */
+        //     console.log("Form Data Submitted:");
+        //     console.log("Username:", n);
+        //     console.log("Password:", a);
+        //     console.log("Phone:", p);
+        //     console.log("Gender:", c ? "Male" : "Female");
+        //     console.log("Email:", x);
+        //     console.log("Functional Area:", f);
+
+        //     return false; // allow submit ; prevent POST to submit.php
+        // }
+
+        // function logSecondForm() {
+        //     var form = document.forms["input"];
+
+        //     var username = form.user.value;
+        //     var firstname = form.firstname.value;
+        //     var lastname = form.lastname.value;
+        //     var password = form.pwd.value;
+
+        //     var sex = "";
+        //     if (form.sex[0].checked) sex = form.sex[0].value;
+        //     if (form.sex[1].checked) sex = form.sex[1].value;
+
+        //     var vehicles = [];
+        //     for (var i = 0; i < form.vehicle.length; i++) {
+        //         if (form.vehicle[i].checked) {
+        //             vehicles.push(form.vehicle[i].value);
+        //         }
+        //     }
+
+        //     console.log("Second Form Data Submitted:");
+        //     console.log("Username:", username);
+        //     console.log("First Name:", firstname);
+        //     console.log("Last Name:", lastname);
+        //     console.log("Password:", password);
+        //     console.log("Gender:", sex);
+        //     console.log("Vehicles:", vehicles.join(", "));
+
+        //     return false; // 🔒 stop navigation, console-only
+        // }
+
+
+    </script>
+
+</head>
+
+<body>
+
+    <form method="post" action="javascript:void(0)" name="f1" onsubmit="return valid();">
+
+        <table border="2" align="center">
+            <tr>
+                <th><label>Username</label></th>
+                <td><input type="text" name="user" placeholder="Enter your username" /></td>
+            </tr>
+
+            <tr>
+                <th><label>Password</label></th>
+                <td><input type="password" name="pwd" placeholder="Enter your password" /></td>
+            </tr>
+
+            <tr>
+                <th><label>Confirm Password</label></th>
+                <td><input type="password" name="pwd1" placeholder="Confirm your password" /></td>
+            </tr>
+
+            <tr>
+                <th><label>PhoneNo.</label></th>
+                <td><input type="text" name="no" placeholder="Enter your phone number" /></td>
+            </tr>
+
+            <tr>
+                <th><label>Gender</label></th>
+                <td>
+                    <input type="radio" name="gen" value="male" id="male" /> <label for="male">Male</label>
+                    <input type="radio" name="gen" value="female" id="female" /> <label for="female">Female</label>
+                </td>
+            </tr>
+
+            <tr>
+                <th><label>Email</label></th>
+                <td><input type="text" name="email" placeholder="Enter your email" /></td>
+            </tr>
+
+            <tr>
+                <th>
+                    <label for="farea">Functional Area</label>
+                </th>
+                <td>
+                    <select name="farea" id="farea">
+                        <option value="Please Select">Please Select</option>
+                        <option value="BPO">BPO</option>
+                        <option value="Web Developer">Web Developer</option>
+                        <option value="Networking">Networking</option>
+                        <option value="S/Developer">S/Developer</option>
+                        <option value="Hardware">Hardware</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <th></th>
+                <td><input type="submit" name="submit" value="SUBMIT" /></td>
+            </tr>
+        </table>
+    </form>
+
+    <?php
+// FIXED: correct field name
+if (isset($_REQUEST["farea"])) {
+    echo $_REQUEST["farea"];
+}
+?>
+
+
+    <div class="layer-relative-1">LAYER 1</div>
+    <div class="layer-relative-2">LAYER 2</div>
+
+
+    <div class="layer-relative-3">LAYER 1</div>
+    <div class="layer-relative-4">LAYER 2</div>
+
+    <div class="hidden-layer">HELLO!!!</div>
+
+    <span class="headlines">
+        Welcome
+    </span>
+    <br />
+    <div class="sublines">
+        This is an example page using CSS.<br />
+        The example is really simple,<br />
+        and doesn't even look good,<br>
+        but it shows the technique.
+    </div>
+    <table border="2">
+        <tr>
+            <td class="sublines">
+                As you can see:<br />
+                The styles even work on tables.
+            </td>
+        </tr>
+    </table>
+    <hr />
+    <div class="infotext">
+        Example from EchoEcho.com.
+    </div>
+    <hr />
+    <b>
+        This is normal bold
+    </b>
+    <br />
+    <b>
+        This is a customized headline style bold
+    </b>
+    <br />
+    <b class="headline">
+        This is headline style bold
+    </b>
+    <br />
+    <i class="headline">
+        This is an italics tag carrying the headline class
+    </i>
+    <div ID="layer1">
+        <table border="1" bgcolor="#FFCC00">
+            <tr>
+                <td>
+                    THIS IS LAYER 1<br />
+                    POSITIONED AT 100,100
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div ID="layer2">
+        <table border="1" bgcolor="#00CCFF">
+            <tr>
+                <td>
+                    THIS IS LAYER 2<br>
+                    POSITIONED AT 140,140
+                </td>
+            </tr>
+        </table>
+    </div>
+    <p>
+        Less than 5 minuets into this HTML tutorial tutorial and I've
+        already created my first home page!
+
+        It is <b class="not-text">NOT</b> me.
+    </p>
+    <br />
+    <h1>
+        Heading 1
+    </h1>
+    <h2>
+        Heading 1
+    </h2>
+    <p>
+        This is a paragraph
+    </p>
+    <hr />
+    <p>
+        This is a paragraph
+    </p>
+    <hr />
+    <p>
+        This is a paragraph
+    </p>
+    <p>
+        This is <br />
+        a para<br />
+        graph with line breaks
+    </p>
+    <h3 class="html-colors">
+        HTML Colors
+    </h3>
+    <a href="http://www.ejobindia.com/" target="_blank" rel="noopener">
+        Visit ejobindia
+    </a>
+    <br />
+    <a href="#tips">
+        Visit the Useful Tips Section
+    </a>
+    <br />
+    <img src="http://www.ejobindia.com/images/ejoblogo.jpg" alt=" ejobindia " />
+    <br />
+
+    <table border="1" cellpadding="5" cellspacing="5" width="100%">
+        <!-- Row 1 : Colspan example -->
+        <tr>
+            <th colspan="3">
+                Employee Details
+            </th>
+        </tr>
+        <!-- Row 2 : Rowspan example -->
+        <tr>
+            <th rowspan="3">
+                Info
+            </th>
+            <td width="20%">
+                Name
+            </td>
+            <td>
+                Salary
+            </td>
+        </tr>
+        <!-- Row 3 -->
+        <tr>
+            <td>
+                Amit
+            </td>
+            <td>
+                ₹40,000
+            </td>
+        </tr>
+        <!-- Row 4 -->
+        <tr>
+            <td>
+                Neha
+            </td>
+            <td>
+                ₹45,000
+            </td>
+        </tr>
+    </table>
+
+    <form name="input" action="javascript:void(0)" method="get" onsubmit="return logSecondForm();">
+
+        Username:
+        <input type="text" name="user" placeholder="Enter your username" />
+        <br />
+        First name:
+        <input type="text" name="firstname" placeholder="Enter your firstname" />
+        <br />
+        Last name:
+        <input type="text" name="lastname" placeholder="Enter your lastname" />
+        <br />
+        Password:
+        <input type="password" name="pwd" placeholder="******" />
+        <br />
+        <input type="radio" name="sex" value="male" id="male_radio" />
+        <label for="male_radio">Male</label>
+        <input type="radio" name="sex" value="Female" id="female_radio" />
+        <label for="female_radio">Female</label>
+        <br />
+        <input type="checkbox" name="vehicle" value="Bike" id="bike_checkbox" />
+        <label for="bike_checkbox">I have a bike</label>
+        <br />
+        <input type="checkbox" name="vehicle" value="Car" id="car_checkbox" />
+        <label for="car_checkbox">I have a car</label>
+        <br />
+        <input type="submit" value="Submit" />
+    </form>
+
+    <p>
+        Explanation of the above code:<br />
+        ● The &lt; !DOCTYPE... &gt; element tells the browser which version
+        of HTML the
+        document is using.<br />
+        ● The &lt; html&gt; element can be thought of as a container that
+        all other tags sit
+        inside (except for the !DOCTYPE tag).<br />
+        ● The &lt; head &gt; tag contains information that is not normally
+        viewable within your
+        browser (such as meta tags, JavaScript and CSS), although the &lt;
+        title &gt; tag is
+        an exception to this. The content of the &lt; title &gt; tag is
+        displayed in the
+        browser&#39;s title bar (right at the very top of the
+        browser).<br />
+        ● The &lt; body &gt; tag is the main area for your content. This is
+        where most of your
+        code (and viewable elements) will go.<br />
+        ● The &lt; p &gt; tag declares a paragraph. This contains the body
+        text.
+        HTML Element Syntax<br />
+        ● An HTML element starts with a start tag / opening tag<br />
+        ● An HTML element ends with an end tag / closing tag<br />
+        ● The element content is everything between the start and the end
+        tag<br />
+        ● Some HTML elements have empty content<br />
+        ● Empty elements are closed in the start tag<br />
+        ● Most HTML elements can have attributes<br />
+        ● HTML elements can have attributes<br />
+        ● Attributes provide additional information about an element<br />
+        ● Attributes are always specified in the start tag<br />
+        ● Attributes come in name/value pairs like:
+        name=&quot;value&quot;<br />
+        There is a special tag for specifying headings in HTML.<br />
+        There are 6 levels of headings in
+        HTML ranging from h1 for the most important, to h6 for the least
+        important.<br />
+        The &lt; hr / &gt; tag creates a horizontal line in an HTML
+        page.<br />
+        The hr element can be used to separate content:<br />
+        Paragraphs are defined with the &lt; p &gt;tag.<br />
+        Use the &lt; br / &gt; tag if you want a line break (a new line)
+        without starting a new
+        paragraph:<br />
+        In HTML, colors can be added by using the style attribute. You can
+        specify a color name (eg,
+        blue), a hexadecimal value (eg, #0000ff), or an RGB
+        value(eg, rgb(0,0,255)).Syntax<br />
+        To add color to an HTML element, you use
+        style=&quot;color:{color}&quot;, where {color} is the color
+        value.<br />
+        To add a colored border to an HTML element, you use
+        style=&quot;border: {width} {color}
+        {style}&quot;, where {width} is the width of the border, {color} is
+        the color of the border, and
+        {style} is the style of the border.<br />
+        The most common methods for specifying colors are by using the
+        color name or the
+        hexadecimal value.<br />
+        Although color names are easier to remember,
+        the hexadecimal values
+        and RGB values provide you with more color options.<br />
+        Hexadecimal values are a combination of letters and numbers.<br />
+        The numbers go from 0 - 9
+        and the letters go from A to F.<br />
+        When using hexadecimal color
+        values in your HTML/CSS, you
+        proceed the value with a hash (#).<br />
+        Different range of
+        hexadecimal values for color you can
+        get from your Photoshop tools, you don&#39;t have to memorize
+        the color code.<br />
+        You can make up your own colors by simply entering any six digit
+        hexadecimal value
+        (preceded by a hash).<br />
+        Check the following example , the only
+        difference is that, instead of
+        using &quot;blue&quot; as the value, we&#39;re using its
+        hexadecimal equivalent (which is #0000ff)<br />
+        A hyperlink (or link) is a word, group of words, or image that you
+        can click on to jump to a
+        new document or a new section within the current document.<br />
+        When you move the cursor over a link in a Web page, the arrow will
+        turn into a little hand.<br />
+        Links are specified in HTML using the tag.<br />
+        The &lt; a &gt; tag can be used in two ways:<br />
+        To create a link to another document, by using the href
+        attribute<br />
+        To create a bookmark inside a document, by using the name
+        attribute<br />
+        The href attribute specifies the destination of a link.<br />
+        Clicking on this hyperlink will send the user to ejobindia&#39;
+        homepage.<br />
+        Tip: The &quot;Link text&quot; doesn&#39;t have to be text. You can
+        link from an image or any other HTML
+        element.<br />
+        The target attribute specifies where to open the linked
+        document.<br />
+        The example below will open the linked document in a new browser
+        window:<br />
+        The name attribute specifies the name of an anchor.<br />
+        The name attribute is used to create a bookmark inside an HTML
+        document.<br />
+        Bookmarks are not displayed in any special way. They are invisible
+        to the reader.<br />
+        Create a link to the &quot;Useful Tips Section&quot; inside the same
+        document:<br />
+        To embed an image into a web page, the image first needs to exist in
+        either .jpg, .gif, or
+        .png format. <br />You can create images in an image editor (such as
+        Adobe Photoshop) and save
+        them in the correct format.<br>
+        Once you&#39;ve created an image, you need to embed it into your web
+        page.<br /> To embed the
+        image into your web page, use the &lt; img / &gt; tag, specifying
+        the actual location of the
+        image.<br />
+        In HTML, images are defined with the &lt; img &gt; tag.<br>
+        The &lt; img &gt; tag.tag is empty, which means that it contains
+        attributes only, and has no
+        closing tag.<br />
+        To display an image on a page, you need to use the src
+        attribute.<br /> Src stands for &quot;source&quot;.<br />
+        The value of the src attribute is the URL of the image you want to
+        display.<br />
+        The URL points to the location where the image is stored.<br />
+        An image named
+        &quot; ejoblogo.jpg &quot;, located in the &quot;images&quot;
+        directory on &quot; www.ejobindia.com &quot; has the URL:
+        http://www.ejobindia.com/images/ejoblogo.jpg.<br />
+        The browser displays the image where the &lt; img &gt; tag occurs in
+        the document.<br /> If you put
+        an image tag between two paragraphs, the browser shows the first
+        paragraph, then the
+        image, and then the second paragraph.<br />
+        The required alt attribute specifies an alternate text for an image,
+        if the image cannot be
+        displayed.<br />
+        The value of the alt attribute is an author-defined text:<br />
+        The alt attribute provides alternative information for an image if a
+        user for some reason
+        cannot view it .<br />
+        In HTML, the original purpose of tables was to present tabular
+        data.<br /> Although they are still
+        used for this purpose today, many web designers tended to use tables
+        for advanced layouts.<br />
+        Tables are defined with the &lt; table &gt; tag.<br />
+        A table is divided into rows (with the &lt; tr &gt; tag), and each
+        row is divided into data cells
+        (with the &lt; td &gt; tag).<br /> td stands for &quot;table
+        data,&quot; and holds the content of a data cell.<br /> A &lt; td
+        &gt; tag can contain text, links, images, lists, forms, other
+        tables, etc.<br />
+        If you do not specify a border attribute, the table will be
+        displayed without borders.<br />
+        Sometimes this can be useful, but most of the time, we want the
+        borders to show.<br /> To
+        display a table with borders, specify the border attribute<br />
+        You can use the colspan attribute to make a cell span multiple
+        columns.<br />
+        Rowspan is for rows just what colspan is for columns (rowspan allows
+        a cell to span multiple
+        rows).<br />
+        HTML forms are used to pass data to a server.<br />
+        A form can contain input elements like text fields, checkboxes,
+        radio-buttons, submit
+        buttons and more.<br /> A form can also contain select lists,
+        textarea,
+        fieldset, legend, and label
+        elements.<br />
+        The &lt; form &gt; tag is used to create an HTML form:<br />
+        &lt; form &gt;<br />
+        input elements<br />
+        &lt; /form &gt;<br />
+        The most important form element is the input element.<br />
+        The input element is used to select user information.<br />
+        An input element can vary in many ways, depending on the type
+        attribute.<br /> An input element
+        can be of type text field, checkbox, password, radio button, submit
+        button, and more.<br />
+        &lt; input type=&quot;text&quot; /&gt; defines a one-line input
+        field that a user can enter text into:<br />
+        The form itself is not visible. Also n\ACote that the default width
+        of a text field is 20
+        characters.<br />
+        &lt; input type=&quot;password&quot; /&gt; defines a password
+        field:<br />
+        The characters in a password field are masked (shown as asterisks or
+        circles).<br />
+        &lt; input type=&quot;radio&quot; / &gt; defines a radio
+        button.<br />
+        Radio buttons let a user select ONLY ONE
+        one of a limited number of choices:<br />
+        &lt;input type=&quot;checkbox&quot; /&gt; defines a checkbox.<br />
+        Checkboxes let a user select ONE or MORE
+        options of a limited number of choices.<br />
+        &lt;input type=&quot;submit&quot; /&gt; defines a submit
+        button.<br />
+        A submit button is used to send form data to a server.<br /> The
+        data is sent to the page specified
+        in the form&#39;s action attribute.<br /> The file defined in the
+        action attribute usually does something
+        with the received input:<br />
+        If you type some characters in the text field above, and click the
+        &quot;Submit&quot; button, the
+        browser will send your input to a page called
+        &quot;html_form_action.asp&quot;.<br /> The page will show
+        you the received input.<br />
+    </p>
+    <p>
+        WHAT IS CSS?
+        CSS stands for Cascading Style Sheets.
+        CSS is a language that you can use to define styles against any HTML
+        element.
+        Advantages of CSS
+        ● CSS saves time
+        When most of us first learn HTML, we get taught to set the font
+        face, size, color, style etc
+        every time it occurs on a page. This means we find ourselves typing
+        (or copying &amp; pasting)
+        the same thing over and over again. With CSS, you only have to
+        specify these details once
+        for any element. CSS will automatically apply the specified styles
+        whenever that element
+        occurs.you can change the appearance and layout of all the pages in
+        your Web using
+        External style sheets , just by editing one single CSS document! CSS
+        allows developers to
+        control the style and layout of multiple Web pages all at once so
+        that it is a breakthrough in
+        Web design . It is possible to define a style for each HTML element
+        and apply it to as many
+        Web pages as you want.To make a global change,all elements in the
+        Web are updated
+        automatically by simply changing the style.
+        ● Pages load faster
+        Less code means faster download times.
+        ● Easy maintenance
+        To change the style of an element, you only have to make an edit in
+        one place.
+        ● Superior styles to HTML
+        CSS has a much wider array of attributes than HTML.
+
+        CSS SYNTAX
+        A style is a definition of fonts, colors, etc.
+
+        Each style has a unique name: a selector.
+
+        The selectors and their styles are defined in one place.
+
+        In your HTML contents you simply refer to the selectors whenever you
+        want to activate a
+        certain style.
+        Selectors are the names that you give to your different styles.
+
+        In the style definition you define how each selector should work
+        (font, color etc.).
+
+        Then, in the body of your pages, you refer to these selectors to
+        activate the styles.
+        There are three types of selectors:
+
+        HTML selectors
+        Used to define styles associated with HTML tags. (A way to redefine
+        the look of tags)
+
+        Class selectors
+        Used to define styles that can be used without redefining plain HTML
+        tags.
+
+        ID selectors
+        Used to define styles relating to objects with a unique ID (most
+        often layers)
+        HTMLSelector {Property:Value;}
+        .ClassSelector {Property:Value;}
+        Class selectors are used when you want to define a style that does
+        not redefine an HTML tag
+        entirely.
+
+        When referring to a Class selector you simply add the class to an
+        HTML tag like in the above
+        example (class=&quot;headline&quot;).
+
+        SPAN and DIV as carriers
+
+        Two tags are particularly useful in combination with class
+        selectors: &lt;SPAN&gt; and&lt;DIV&gt;.
+
+        Both are &quot;dummy&quot; tags that don&#39;t do anything in
+        themselves. Therefore, they are excellent
+        for carrying CSS styles.
+
+        &lt;SPAN&gt; is an &quot;inline-tag&quot; in HTML, meaning that no
+        line breaks are inserted before or after
+        the use of it.
+
+        &lt;DIV&gt; is a &quot;block tag&quot;, meaning that line breaks are
+        automatically inserted to distance the
+        block from the surrounding content (like &lt;P&gt; or &lt;TABLE&gt;
+        tags).
+        &lt;DIV&gt; has a particular importance for layers. Since layers are
+        separate blocks of
+        information. &lt;DIV&gt; is an obvious choice when defining layers
+        on your pages.
+
+        #IDSelector {Property:Value;}
+        ID selectors are used when you want to define a style relating to an object with a unique ID.
+
+        This selector is most widely used with layers (as in the above example), since layers are
+        always defined with a unique ID.
+        CSS can be defined for single tags ( inline ) by simply adding
+        style=&quot;styledefinition:styleattribute;&quot; to the tags.
+        CSS can be defined for entire pages by simply adding a style definition to the head section.
+        (Internal)
+        In the above example, although we used the sublines style twice, we only had to define it
+        once: in the &lt;head&gt;section.
+
+        By defining styles for entire pages, you will gain the freedom to easily change the styles
+        even after the entire page has been made.
+
+        This is an obvious advantage for you as a designer. But the advantage is on the visitors side
+        as well.
+
+        Since the styles are only defined in one place, the page size will be smaller, and thus faster
+        to load.
+
+        There is a way to emphasize these advantages even more: using external CSS styles that
+        work for entire sites.
+        ● SS can be defined for entire sites by simply writing the CSS definitions in a
+        plain text file that is referred to from each of the pages in the site.
+        ● Rather than writing the entire CSS definition on each page, as in the previous
+        examples, you can write it to a text file that is only loaded on the first page that
+        a visitor sees at your site.
+        ● When the visitor jumps to other pages, the CSS text file will be cached and thus
+        doesn&#39;t have to be transferred via the internet for subsequent pages.
+        ● This means that your pages will load faster while at the same time you will have
+        extreme flexibility to change the style for your entire site even after it has been
+        made.
+        The above example is the exact same as we used for CSS defined for entire pages, with one
+        important exception:
+        There is no style definition on the page. Instead we added a reference to an external style
+        sheet:
+        &lt;link rel=stylesheet href=&quot;whatever.css&quot; type=&quot;text/css&quot;&gt;
+        This means that the browser will look for a file called whatever.css and insert it at the place
+        where the reference was found in the
+        html document.
+
+        So in order to complete our example we need to have a file called whatever.css that looks
+        like this:
+
+        File: whatever.css
+        Background colors are defined similar to the colors mentioned above. For example you can
+        set the background color of the entire page using the BODYselector:
+        BODY {background-color:#FF6666;}
+        CSS lets you set a background image for both the page and single elements on the page.
+        In addition, CSS offers several positioning methods for background images.
+        You can define the background image for the page like this:
+
+        BODY {background-image:url(myimage.gif);}
+        You can control the repetition of the image with the background-repeatproperty.
+
+        background-repeat:repeat
+        Tiles the image until the entire page is filled, just like an ordinary background image in plain
+        HTML.
+
+        background-repeat:repeat-x
+        Repeats the image horizontally - but not vertically.
+
+        background-repeat:repeat-y
+        Repeats the image vertically - but not horizontally.
+
+        background-repeat:no-repeat
+        Does not tile the image at all.
+        Background positioning is done by entering a value for the left position and top position
+        separated by a space.
+        In this example the image is positioned 75 pixels from the upper left corner of the page:
+
+        BODY {background-image:url(myimage.gif); background-position: 75px 75px;}
+
+        Note: Background positioning is not supported by Netscape 4 browsers.
+
+        Fixing a background
+        You can fixate an image at a certain position so that it doesn&#39;t move when scrolling occurs.
+
+        BODY {background-image:url(myimage.gif); background-attachment: fixed;}
+
+        Note: Background fixation is not supported by Netscape 4 browsers.
+
+        DEFINING STYLES FOR LINKS
+
+        As mentioned in the above table, there are four different selectors with respect to links.
+        You can specify whatever style you&#39;d like to each of these selectors, just like you&#39;d do with
+        normal text.
+        A:link
+        Defines the style for normal unvisited links.
+        A:visited
+        Defines the style for visited links.
+        A:active
+        Defines the style for active links.
+        A link becomes active once you click on it.
+        A:hover
+        Defines the style for hovered links.
+        A link is hovered when the mouse moves over it.
+        Note: Not supported by Netscape browsers prior to version 6.
+        Example: Hover
+        &lt;style type=&quot;text/css&quot;&gt;
+        A:link {text-decoration: none}
+        A:visited {text-decoration: none}
+        A:active {text-decoration: none}
+        A:hover {text-decoration: underline; color: red;}
+        &lt;/style&gt;
+        Another example would be to create links that are both underlined andoverlined.
+
+        Example: Underline/Overline
+        &lt;style type=&quot;text/css&quot;&gt;
+        A:link {text-decoration: none}
+        A:visited {text-decoration: none}
+        A:active {text-decoration: none}
+
+        A:hover {text-decoration: underline overline; color: red;}
+        &lt;/style&gt;
+
+        With CSS, it is possible to work with layers: pieces of HTML that are placed on top of the
+        regular page with pixel precision.
+        The advantages of this are obvious - but once again Netscape has very limited support of
+        CSS layers - and to top it off: the limited support it offers is quite often executed with
+        failures.
+        So the real challenge when working with layers is to make them work on Netscape browsers
+        as well.
+
+        LAYER BASICS
+        LAYER 1 ON TOP:
+        &lt;div style=&quot;position:relative; font-size:50px; z-index:2;&quot;&gt;LAYER 1&lt;/div&gt;
+        &lt;div style=&quot;position:relative; top:-50; left:5; color:red; font-size:80px; z-index:1&quot;&gt;LAYER
+        2&lt;/div&gt;
+
+        LAYER 2 ON TOP:
+        &lt;div style=&quot;position:relative; font-size:50px; z-index:3;&quot;&gt;LAYER 1&lt;/div&gt;
+        &lt;div style=&quot;position:relative; top:-50; left:5; color:red; font-size:80px; z-index:4&quot;&gt;LAYER
+        2&lt;/div&gt;
+
+        To create a layer all you need to do is assign the position attribute to your style. The
+        position can be either absolute or relative.
+        The position itself is defined with the top and left properties.
+        Finally, which layer is on top is defined with the z-index attribute.
+
+        RELATIVE VERSUS ABSOLUTE POSITIONING
+        You can either position your layer calculated from the upper left corner(absolute) or
+        calculated from the position where the layer itself is inserted (relative).
+
+        position:absolute
+        If you define the position to be absolute it will be calculated from the upper left corner of
+        the page - unless the layer is defined inside another layer, in which case it will be calculated
+        from the upper left corner of the parent layer.
+        position:relative
+
+        If you define the position to be relative it will be relative to the position of the tag that
+        carries the style.
+        That is, if you add a relatively positioned layer in the middle of the page, then the position
+        will be calculated from that exact spot in the middle of your page where it was added.
+
+        Valid values for the visibility property are: visible and hidden.
+        This example shows how to create an invisible layer:
+        &lt;div style=&quot;position:relative; visibility:hidden;&quot;&gt;HELLO!!!&lt;/div&gt;
+    </p>
+    <P>
+        Javascript is a scripting language that will allow you to add real programming to your
+        webpages.
+
+        You can create small application type processes with javascript, like a calculator or a
+        primitive game of some sort.
+
+        However, there are more serious uses for javascript:
+
+        ● Browser Detection
+        ● Detecting the browser used by a visitor at your page. Depending on the
+        browser, another page specifically designed for that browser can then be
+        loaded.
+        ● Cookies
+        ● Storing information on the visitor&#39;s computer, then retrieving this information
+        automatically next time the user visits your page. This technique is called
+        &quot;cookies&quot;.
+        ● Control Browsers
+        ● Opening pages in customized windows, where you specify if the browser&#39;s
+        buttons, menu line, status line or whatever should be present.
+        ● Validate Forms
+        ● Validating inputs to fields before submitting a form.
+        ● An example would be validating the entered email address to see if it has an @
+        in it, since if not, it&#39;s not a valid address.
+
+        Since javascript isn&#39;t HTML, you will need to let the browser know in advance when you
+        enter javascript to an HTML page. This is done using the &lt;script&gt; tag.
+
+        The browser will use the &lt;script&gt; type=&quot;text/javascript&quot;&gt; and &lt;/script&gt; to tell where
+        javascript starts and ends.
+
+        Knowing that javascript needs to be entered between &lt;script&gt; tags, is a start. But there are
+        a few other things you need to know before writing your first javascript:
+
+        ● Javascript lines end with a semicolon.
+        ● You may have noticed from the example on the previous page that javascript
+        lines end with a semicolon.
+        ● You can easily put all your javascript on a single line without destroying the
+        performance of it.
+        ● However, you would destroy the overview of your script so it is not advisable.
+        ● Always put the text within &quot; &quot;.
+        ● When entering text to be handled by javascript, you should always put the text
+        within &quot; &quot;.
+        ● If you forget to enclose your text in &quot; &quot;, javascript will interpret your text as
+        being variables rather than text.
+        ● In the next section you will learn why this would cause an error to your script.
+        ● Capital letters are different from lowercase letters.
+        ● You should always remember that capital letters are different from lowercase
+        letters.
+        ● This means that when you write commands in javascript, you need to type
+        capital letters in the correct places, and nowhere else.
+
+        Incorrect capitalization is probably the most common source of error for javascript
+        programmers on all levels!!
+
+        Events are actions that can be detected by javascript.
+
+        An example would be the onmouseover event, which is detected when the user moves the
+        mouse over an object.
+
+        Another event is the onload event, which is detected as soon as the page is finished loading.
+
+        Usually, events are used in combination with functions, so that the function does not start
+        until the event happens.
+
+        The function simply shifts two images. One image that shows the button in an &quot;up&quot; position,
+        and another image that shows the button in a &quot;down&quot; position.
+
+        If this function is called using an onmouseover event, it will make it look as if the button is
+        pressed down when the mouse is moved over the image.
+
+        The following are the most important events recognized by javascript:
+
+        Event Detected when HTML tags
+        onfocus=&quot;&quot; Form field gets focus select, text, textarea
+        onblur=&quot;&quot; Form field looses focus select, text, textarea
+        onchange=&quot;&quot; Content of a field changes select, text, textarea
+        onselect=&quot;&quot; Text is selected text, textarea
+        onmouseover=&quot;&quot; Mouse moves over a link A
+        onmouseout=&quot;&quot; Mouse moves out of a link A
+        onclick=&quot;&quot; Mouse clicks an object
+
+        A, button, checkbox,
+        radio, reset, submit
+        onload=&quot;&quot; Page is finished loading body, frameset
+        onunload=&quot;&quot; Browser opens new document body, frameset
+        onSubmit=&quot;&quot; Submit button is clicked form
+        Events are used for two main purposes:
+        ● To perform a function upon detection of the event,
+        ● To show a popup box upon detection of the event.
+        onFocus, onblur and onchange are mainly used in combination with validation of form fields.
+
+        Lets say you had a function called validateEmail() that would check to see if an entered
+        email address has an @ in it, and if it has a meaningful end, such as &quot;com&quot;, &quot;net&quot; or
+        whatever. Furthermore, suppose the user could enter his email address in a form.
+
+        You would then use the onchange event to call the function whenever the user changes the
+        content of the field:
+        &lt;input type=&quot;text&quot; size=&quot;20&quot; onchange=&quot;validateEmail()&quot;&gt;;
+
+        onload and onunload are mainly used for popups that appear when the user enters or leaves
+        the page.
+        Another important use is in combination with cookies that should be set upon arrival or
+        leaving your pages.
+
+        For example, you might have a popup asking the user to enter his name upon his first
+        arrival to your page. The name is then stored in a cookie. Furthermore, when the visitor
+        leaves your page a cookie stores the current date.
+        Next time the visitor arrives at your page, it will have another popup saying something like:
+        &quot;Welcome Bill Clinton, this page has not been updated since your last visit 8 days ago&quot;.
+
+        Another common use of the onLoad and onunload events is: Some annoying pages have a
+        function that immediately opens several other windows as soon as you enter the page. This
+        is a clear break of netiquette, and is not considered proper webdesign.
+
+        onsubmit is used for one major purpose: To validate all fields within a form before actually
+        submitting it.
+
+        In the above example for onchange we showed how you can validate a single form field.
+        Sometimes however, the visitor might find it annoying to have validations in the middle of
+        entering fields on a form. Rather than validating after each input, you might want the form
+        to be validated only upon clicking the submit button.
+
+        This can be done using the onsubmit event.
+
+        Assume you made a function named checkform() that would validate entries to a form.
+
+        Now you want this function to be called when the user clicks the submit button.
+        If the content is not accepted by your function the submit should be cancelled.
+        This way nothing would be submitted unless your function accepted the content.
+
+        What you should do, is: add an onsubmit event to the &lt;form&gt; tag this way:
+        &lt;form method=&quot;yourchoice&quot; action=&quot;yourchoice&quot; onsubmit=&quot;return checkform()&quot;&gt;
+
+        The function checkform() returns either true or false.
+        If it returns true the submit will take place.
+        If it returns false the submit will be cancelled.
+
+        onmouseover and onmouseout are mainly used for one purpose: To create animated
+        buttons.
+
+        You may have noticed that these events can only be used in combination with the link tag
+        &lt;a&gt;.
+
+        JavaScript Syntax : A JavaScript consists of JavaScript statements that are placed within
+        the &lt;script&gt;... &lt;/script&gt; HTML tags in a web page. You can place the &lt;script&gt; tag
+        containing your JavaScript anywhere within you web page but it is preferred way to keep it
+        within the &lt;head&gt; tags.
+        &lt;script ...&gt;
+        JavaScript code
+        &lt;/script&gt;
+        Variables: Before you use a variable in a JavaScript program, you must declare it. Variables
+        are declared with the var keyword.
+
+        DIALOG BOX IN JAVASCRIPT :
+        JavaScript supports three important types of dialog boxes. These dialog boxes can be used
+        to raise and alert, or to get confirmation on any input or to have a kind of input from the
+        users.
+        Alert Dialog Box :
+        An alert dialog box is mostly used to give a warning message to the users. Like if one input
+        field is required to enter some text but the user does not enter that field then as a part of
+        validation you can use an alert box to give a warning message.. Alert box gives only one
+        button &quot;OK&quot; to select and proceed.
+        A confirmation dialog box is mostly used to take user&#39;s consent on any option. It displays a
+        dialog box with two buttons: OK and Cancel.If the user clicks on the OK button the window
+        method confirm() will return true. If the user clicks on the Cancel button confirm() returns
+        false.
+        The prompt dialog box is very useful when you want to pop-up a text box to get user input.
+        Thus it enables you to interact with the user. The user needs to fill in the field and then click
+        OK.. This dialog box with two buttons: OK and Cancel. If the user clicks on the OK button
+        the window method prompt() will return the entered value from the text box. If the user
+        clicks on the Cancel button the window method prompt() returns null.
+        Comparison operators are used in logical statements to determine equality or difference
+        between variables or values.
+
+        Operator Description
+        == is equal to
+        === is exactly equal to (value and type)
+        != is not equal
+        &gt; is greater than
+        &lt; is less than
+        &gt;= is greater than or equal to
+        &lt;= is less than or equal to
+
+        Logical Operators :
+        Logical operators are used in determine the logic between variables or values.
+        Operator Description
+        &amp;&amp; and
+        || or
+        ! not
+
+        Conditional Statements
+        Very often when you write code, you want to perform different actions for different
+        decisions. You can use conditional statements in your code to do this.
+        In JavaScript we have the following conditional statements:
+        if statement - use this statement if you want to execute some code only if a specified
+        condition is true
+        if...else statement - use this statement if you want to execute some code if the condition is
+        true and another code if the condition is false
+        if...else if....else statement - use this statement if you want to select one of many blocks of
+        code to be executed
+        switch statement - use this statement if you want to select one of many blocks of code to be
+        executed
+        Often when you write code, you want the same block of code to run over and over again in
+        a row. Instead of adding several almost equal lines in a script we can use loops to perform a
+        task like this. In JavaScript, there are two different kind of loops:
+        ● for - loops through a block of code a specified number of times
+        ● while - loops through a block of code while a specified condition is true
+        The for Loop :
+        The for loop is used when you know in advance how many times the script should run.
+        Syntax
+        for (var=startvalue;var&lt;=endvalue;var=var+increment)
+        {
+        code to be executed
+        }
+        Example
+        The example below defines a loop that starts with i=0. The loop will continue to run as long
+        as it is less than, or equal to 5. i will increase by 1 each time the loop runs.
+        Note: The increment parameter could also be negative, and the &lt;= could be any comparing
+        statement.
+        Form validation used to occur at the server, after the client had entered all necessary data
+        and then pressed the Submit button. JavaScript, provides a way to validate form&#39;s data on
+        the client&#39;s computer before sending it to the web server.
+    </P>
+</body>
+
+</html>

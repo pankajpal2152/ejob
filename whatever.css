@@ -1,0 +1,37 @@
+.headlines,
+.sublines,
+.infotext {
+    font-family: arial;
+    color: black;
+    background: yellow;
+    font-weight: bold;
+}
+
+.headlines {
+    font-size: 14pt;
+}
+
+.sublines {
+    font-size: 12pt;
+}
+
+.infotext {
+    font-size: 10pt;
+}
+
+BODY {
+    background-color: #FF6666;
+}
+
+BODY {
+    background-image: url(myimage.gif);
+    background-attachment: fixed;
+    background-position: 75px 75px;
+    background-repeat: repeat;
+    background-repeat: repeat-x;
+    background-repeat: repeat-y;
+    background-repeat: no-repeat;
+
+
+
+}

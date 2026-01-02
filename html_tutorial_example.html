@@ -301,11 +301,71 @@
         // }
 
 
+        const adventurer = {
+            name: "Alice",
+            cat: {
+                name: "Dinah",
+                color: "brown"
+            },
+            dog: {
+                name: "juby",
+                color: "black"
+            },
+            address: {
+                city: "Kolkata",
+                state: ["West Bengal", "gujrat", "assam"],
+                location: "gariahat"
+            }
+        };
+
+        const dogName = adventurer.dog?.name;
+        document.write(dogName + "<br/>"); //juby
+
+        document.write(adventurer.cat?.color + "<br/>"); //brown
+
+        document.write(adventurer.dog?.petname + "<br/>"); //undefined
+
+        document.write(adventurer.rabbit?.color + "<br/>"); //undefined
+
+        document.write(adventurer.address?.city + "<br/>"); //Kolkata
+
+        document.write(adventurer.address?.state + "<br/>"); //West Bengal, gujrat, assam
+
+
+
     </script>
 
 </head>
 
 <body>
+
+    <h2>JavaScript async / await</h2>
+    <p>Wait 3 seconds (3000 milliseconds) for this page to change.</p>
+    <h1 id="demo"></h1>
+    
+    <p>Minimum age:<input type="number" id="ageToCheck" value="18" placeholder="Enter minimum age"></p>
+    <button onclick="myFunction()">Try it</button>
+
+    <p>All ages above minimum:<span id="demo"></span></p>
+
+    <div id="div1">
+        <p id="p1">This is a paragraph.</p>
+        <p id="p2">This is another paragraph.</p>
+    </div>
+
+    <h1>Mobile OS</h1>
+    <ul>
+        <li>Android</li>
+        <li>iOS</li>
+    </ul>
+
+    <h2>JavaScript addEventListener()</h2>
+    <p>This example uses the addEventListener() method to attach a click event to a button.</p>
+
+    <button id="myBtn">Try Me!</button>
+    <p id="demo"></p>
+    <p id="asyncDemo"></p>
+
 
     <form method="post" action="javascript:void(0)" name="f1" onsubmit="return valid();">
 
@@ -1241,7 +1301,750 @@ if (isset($_REQUEST["farea"])) {
         Form validation used to occur at the server, after the client had entered all necessary data
         and then pressed the Submit button. JavaScript, provides a way to validate form&#39;s data on
         the client&#39;s computer before sending it to the web server.
+        JSON is a syntax for storing and exchanging data.
+
+        JSON is text, written with JavaScript object notation.
+        Exchanging Data
+        When exchanging data between a browser and a server, the data can only be text.
+        JSON is text, and we can convert any JavaScript object into JSON, and send JSON to the
+        server.
+        We can also convert any JSON received from the server into JavaScript objects.
+        This way we can work with the data as JavaScript objects, with no complicated parsing and
+        translations.
+        Sending Data
+        If you have data stored in a JavaScript object, you can convert the object into JSON, and
+        send it to a server:
+        Example
+        var myObj = {name: &quot;John&quot;, age: 31, city: &quot;New York&quot;};
+        var myJSON = JSON.stringify(myObj);
+        window.location = &quot;demo_json.php?x=&quot; + myJSON;
+        Receiving Data
+        If you receive data in JSON format, you can convert it into a JavaScript object:
+        Example
+        var myJSON = &#39;{&quot;name&quot;:&quot;John&quot;, &quot;age&quot;:31, &quot;city&quot;:&quot;New
+        York&quot;}&#39;;
+        var myObj = JSON.parse(myJSON);
+        document.getElementById(&quot;demo&quot;).innerHTML = myObj.name;
+        JSON Objects
+        Example
+        { &quot;name&quot;:&quot;John&quot;, &quot;age&quot;:30, &quot;car&quot;:null }
+        JSON objects are surrounded by curly braces {}.
+        JSON objects are written in key/value pairs.
+        Keys must be strings, and values must be a valid JSON data type (string, number, object,
+        array, boolean or null).
+        Keys and values are separated by a colon.
+        Each key/value pair is separated by a comma.
+
+        Accessing Object Values
+        You can access the object values by using dot (.) notation:
+        Example
+        myObj = { &quot;name&quot;:&quot;John&quot;, &quot;age&quot;:30, &quot;car&quot;:null };
+        x = myObj.name;
+
+        You can also access the object values by using bracket ([]) notation:
+        Example
+        myObj = { &quot;name&quot;:&quot;John&quot;, &quot;age&quot;:30, &quot;car&quot;:null };
+        x = myObj[&quot;name&quot;];
+        Looping an Object
+        You can loop through object properties by using the for-in loop:
+        myObj = { &quot;name&quot;:&quot;John&quot;, &quot;age&quot;:30, &quot;car&quot;:null };
+        for (x in myObj) {
+          document.getElementById(&quot;demo&quot;).innerHTML += x;
+        }
+        In a for-in loop, use the bracket notation to access the property values:
+        Example
+        myObj = { &quot;name&quot;:&quot;John&quot;, &quot;age&quot;:30, &quot;car&quot;:null };
+        for (x in myObj) {
+          document.getElementById(&quot;demo&quot;).innerHTML += myObj[x];
+        }
+        Nested JSON Objects
+        Values in a JSON object can be another JSON object.
+        myObj = {
+          &quot;name&quot;:&quot;John&quot;,
+          &quot;age&quot;:30,
+          &quot;cars&quot;: {
+            &quot;car1&quot;:&quot;Ford&quot;,
+            &quot;car2&quot;:&quot;BMW&quot;,
+            &quot;car3&quot;:&quot;Fiat&quot;
+          }
+         }
+        You can access nested JSON objects by using the dot notation or bracket notation:
+
+        x = myObj.cars.car2;
+        // or:
+        x = myObj.cars[&quot;car2&quot;];
+        Modify Values
+        You can use the dot notation to modify any value in a JSON object:
+        myObj.cars.car2 = &quot;Mercedes&quot;;
+        You can also use the bracket notation to modify a value in a JSON object:
+        myObj.cars[&quot;car2&quot;] = &quot;Mercedes&quot;;
+
+        Delete Object Properties
+        Use the delete keyword to delete properties from a JSON object:
+        delete myObj.cars.car2;
+        JSON.parse()
+        A common use of JSON is to exchange data to/from a web server.
+        When receiving data from a web server, the data is always a string.
+        Parse the data with JSON.parse(), and the data becomes a JavaScript object.
+        Example - Parsing JSON
+        Imagine we received this text from a web server:
+        &#39;{ &quot;name&quot;:&quot;John&quot;, &quot;age&quot;:30, &quot;city&quot;:&quot;New York&quot;}&#39;
+        Use the JavaScript function JSON.parse() to convert text into a JavaScript object:
+        var obj = JSON.parse(&#39;{ &quot;name&quot;:&quot;John&quot;, &quot;age&quot;:30, &quot;city&quot;:&quot;New
+        York&quot;}&#39;);
+        Use the JavaScript object in your page:
+        &lt;p id=&quot;demo&quot;&gt;&lt;/p&gt;
+        &lt;script&gt;
+        document.getElementById(&quot;demo&quot;).innerHTML = obj.name + &quot;, &quot; + obj.age;
+        &lt;/script&gt;
+        JSON.stringify()
+
+        A common use of JSON is to exchange data to/from a web server.
+        When sending data to a web server, the data has to be a string.
+        Convert a JavaScript object into a string with JSON.stringify().
+        Stringify a JavaScript Object
+        Imagine we have this object in JavaScript:
+        var obj = { name: &quot;John&quot;, age: 30, city: &quot;New York&quot; };
+        Use the JavaScript function JSON.stringify() to convert it into a string.
+        var myJSON = JSON.stringify(obj);
+        myJSON is now a string, and ready to be sent to a server:
+        Example
+        var obj = { name: &quot;John&quot;, age: 30, city: &quot;New York&quot; };
+        var myJSON = JSON.stringify(obj);
+        document.getElementById(&quot;demo&quot;).innerHTML = myJSON;
+        Stringify a JavaScript Array
+        It is also possible to stringify JavaScript arrays:
+        Imagine we have this array in JavaScript:
+        var arr = [ &quot;John&quot;, &quot;Peter&quot;, &quot;Sally&quot;, &quot;Jane&quot; ];
+        Use the JavaScript function JSON.stringify() to convert it into a string.
+        var myJSON = JSON.stringify(arr);
+        The result will be a string following the JSON notation.
+        myJSON is now a string, and ready to be sent to a server:
+        Example
+        var arr = [ &quot;John&quot;, &quot;Peter&quot;, &quot;Sally&quot;, &quot;Jane&quot; ];
+        var myJSON = JSON.stringify(arr);
+        document.getElementById(&quot;demo&quot;).innerHTML = myJSON;
+
+        JavaScript - HTML DOM Methods
+
+        HTML DOM methods are actions you can perform (on HTML Elements).
+        HTML DOM properties are values (of HTML Elements) that you can set or change.
+        The HTML DOM can be accessed with JavaScript (and with other programming languages).
+        In the DOM, all HTML elements are defined as objects.
+        The programming interface is the properties and methods of each object.
+        A property is a value that you can get or set (like changing the content of an HTML
+        element).
+        A method is an action you can do (like add or deleting an HTML element).
+        The following example changes the content (the innerHTML) of the &lt;p&gt; element
+        with id=&quot;demo&quot;:
+        The getElementById Method
+        The most common way to access an HTML element is to use the id of the element.
+        In the example above the getElementById method used id=&quot;demo&quot; to find the element.
+        The innerHTML Property
+        The easiest way to get the content of an element is by using the innerHTML property.
+        The innerHTML property is useful for getting or replacing the content of HTML elements.
+        Document Object
+        The HTML DOM document object is the owner of all other objects in your web page.
+
+        The document object represents your web page.
+        If you want to access any element in an HTML page, you always start with accessing the
+        document object.
+        Below are some examples of how you can use the document object to access and
+        manipulate HTML.
+
+        Method Description
+
+        document.getElementById(id) Find an element by element id
+
+        document.getElementsByTagName(name) Find elements by tag name
+
+        document.getElementsByClassName(name) Find elements by class name
+
+        document.createElement(element) Create an HTML element
+
+        document.removeChild(element) Remove an HTML element
+
+        document.appendChild(element) Add an HTML element
+
+        document.replaceChild(new, old) Replace an HTML element
+
+        document.write(text) Write into the HTML output stream
+
+        EventListener
+
+        addEventListener() method
+        The addEventListener() method attaches an event handler to the specified element.
+        The addEventListener() method attaches an event handler to an element without
+        overwriting existing event handlers.The getElementById Method
+        The most common way to access an HTML element is to use the id of the element.
+        In the example above the getElementById method used id=&quot;demo&quot; to find the element.
+        The innerHTML Property
+        The easiest way to get the content of an element is by using the innerHTML property.
+        The innerHTML property is useful for getting or replacing the content of HTML elements.
+        Document Object
+        The HTML DOM document object is the owner of all other objects in your web page.
+
+        The document object represents your web page.
+        If you want to access any element in an HTML page, you always start with accessing the
+        document object.
+        Below are some examples of how you can use the document object to access and
+        manipulate HTML.
+
+        Method Description
+
+        document.getElementById(id) Find an element by element id
+
+        document.getElementsByTagName(name) Find elements by tag name
+
+        document.getElementsByClassName(name) Find elements by class name
+
+        document.createElement(element) Create an HTML element
+
+        document.removeChild(element) Remove an HTML element
+
+        document.appendChild(element) Add an HTML element
+
+        document.replaceChild(new, old) Replace an HTML element
+
+        document.write(text) Write into the HTML output stream
+
+        EventListener
+
+        addEventListener() method
+        The addEventListener() method attaches an event handler to the specified element.
+        The addEventListener() method attaches an event handler to an element without
+        overwriting existing event handlers.
+        In the DOM, all parts of the document, such as elements, attributes, text, etc. are organized
+        in a hierarchical tree-like structure; similar to a family tree in real life that consists of
+        parents and children. In DOM terminology these individual parts of the document are known
+        as nodes.
+        The
+        topmost node i.e. the Document node is the root node of the DOM tree, which has one child,
+        the &lt;html&gt; element. Whereas, the &lt;head&gt; and &lt;body&gt; elements are the child nodes of
+        the &lt;html&gt; parent node.
+        The &lt;head&gt; and &lt;body&gt; elements are also siblings since they are at the same level.
+        Further, the text content inside an element is a child node of the parent element. So, for
+        example, &quot;Mobile OS&quot; is considered as a child node of the &lt;h1&gt; that contains it, and so on.
+        Creating New HTML Elements (Nodes)
+        To add a new element to the HTML DOM, you must create the element (element node) first,
+        and then append it to an existing element.
+        This code creates a new &lt;p&gt; element:
+        var para = document.createElement(&quot;p&quot;);
+        To add text to the &lt;p&gt; element, you must create a text node first. This code creates a text
+        node:
+        var node = document.createTextNode(&quot;This is a new paragraph.&quot;);
+        Then you must append the text node to the &lt;p&gt; element:
+        para.appendChild(node);
+        Finally you must append the new element to an existing element.
+        This code finds an existing element:
+        var element = document.getElementById(&quot;div1&quot;);
+        This code appends the new element to the existing element:
+        element.appendChild(para);
+        Collection
+
+        An HTMLCollection is a list of nodes. An individual node may be accessed by either ordinal
+        index or the node&#39;s name or id attributes. Note: Collections in the HTML DOM are assumed
+        to be live meaning that they are automatically updated when the underlying document is
+        changed.
+        HTMLCollection Length
+        The length property defines the number of elements in an HTMLCollection:
+        Example
+        var myCollection = document.getElementsByTagName(&quot;p&quot;);
+        document.getElementById(&quot;demo&quot;).innerHTML = myCollection.length;
+
+        1. Create a collection of all &lt;p&gt; elements
+
+        2. Display the length of the collection
+        The length property is useful when you want to loop through the elements in a collection:
+        Example
+        Change the background color of all &lt;p&gt; elements:
+        var myCollection = document.getElementsByTagName(&quot;p&quot;);
+        var i;
+        for (i = 0; i &lt; myCollection.length; i++) {
+          myCollection[i].style.color = &quot;red&quot;;
+        }
+        HTMLCollection Object
+        The getElementsByTagName() method returns an HTMLCollection object.
+        An HTMLCollection object is an array-like list (collection) of HTML elements.
+        The following code selects all &lt;p&gt; elements in a document:
+        Example
+        var x = document.getElementsByTagName(&quot;p&quot;);
+        The elements in the collection can be accessed by an index number.
+        To access the second &lt;p&gt; element you can write:
+        y = x[1];
+        NodeList
+        The NodeList object specifies the abstraction of an ordered collection of nodes. The items in
+        the NodeList are accessible via an integral index, starting from 0.
+        Attributes
+        The following table lists the attributes of the NodeList object −
+        Attribute Type Description
+
+        length unsigned long It gives the number of nodes in the node list.
+
+        Methods
+        The following is the only method of the NodeList object.
+
+        S.N
+        o.
+
+        Method &amp; Description
+
+        1
+        item()
+        It returns the indexth item in the collection. If index is greater than or equal to the
+        number of nodes in the list, this returns null.
+
+        All browsers return a NodeList object for the property childNodes. 
+        Most browsers return a NodeList object for the method querySelectorAll().
+        The following code selects all &lt;p&gt; nodes in a document:
+        var myNodeList = document.querySelectorAll(&quot;p&quot;);
+        The elements in the NodeList can be accessed by an index number.
+        To access the second &lt;p&gt; node you can write:
+        y = myNodeList[1];
+        The length property defines the number of nodes in a node list:
+        var myNodelist = document.querySelectorAll(&quot;p&quot;);
+        document.getElementById(&quot;demo&quot;).innerHTML = myNodelist.length;
+        JavaScript “var” and “let”
+        var and let are both used for variable declaration in javascript but the difference between
+        them is that var is function scoped and let is block scoped.
+        It can be said that a variable declared with var is defined throughout the program as
+        compared to let.
+        Example : var
+        function func() {
+          // x is known here but not defined.
+          console.log(&#39;value of x here: &#39;, x)
+          {
+            var x = 10;
+            x = x + 5;
+          }
+          // x is still known here and has a value.
+          console.log(&#39;value of x after for block: &#39;, x)
+        }
+        // x is NOT known here.
+        func()
+        Example : let
+
+        function func() {
+          // x is NOT known here. Try uncommenting the line below.
+          // console.log(&#39;value of x here: &#39;, x)
+          {
+            let x = 10;
+            x = x + 5;
+          }
+          // x is NOT known here. Try uncommenting the line below.
+          // console.log(&#39;value of x after for block: &#39;, x)
+        }
+        // x is NOT known here.
+        func()
+
+        JavaScript “const”
+        A variable is a data structure that contains information that is expected to change. A
+        constant is a data structure that contains information that will never change. If there is
+        room for error, var should always be used. However, not all information that never changes
+        in the lifetime of a program needs to be declared with const. If under different
+        circumstances the information should change, use var to indicate that, even if the actual
+        change doesn&#39;t appear in your code.
+
+        If we assign a primitive value to a constant, we cannot change the primitive value: 
+        Example
+        const PI = 3.141592653589793;
+        PI = 3.14;      // This will give an error
+        PI = PI + 10;   // This will also give an error
+        Constant Objects can Change
+        You can change the properties of a constant object:
+        Example
+        // You can create a const object:
+        const car = {type:&quot;Fiat&quot;, model:&quot;500&quot;, color:&quot;white&quot;};
+        // You can change a property:
+        car.color = &quot;red&quot;;
+        // You can add a property:
+        car.owner = &quot;Johnson&quot;;
+        But you can NOT reassign a constant object:
+        Example
+
+        const car = {type:&quot;Fiat&quot;, model:&quot;500&quot;, color:&quot;white&quot;};
+        car = {type:&quot;Volvo&quot;, model:&quot;EX60&quot;, color:&quot;red&quot;};    // ERROR
+        Arrow functions
+        There’s another very simple and concise syntax for creating functions, that’s often better
+        than Function Expressions.
+        It’s called “arrow functions”, because it looks like this:
+        let func = (arg1, arg2, ...argN) =&gt; expression
+        …This creates a function func that accepts arguments arg1..argN, then evaluates
+        the expression on the right side with their use and returns its result.
+        In other words, it’s the shorter version of:
+        let func = function(arg1, arg2, ...argN) {
+        return expression;
+        };
+        Let’s see a concrete example:
+        let sum = (a, b) =&gt; a + b;
+        /* This arrow function is a shorter form of:
+        let sum = function(a, b) {
+        return a + b;
+        };
+        */
+        alert( sum(1, 2) ); // 3
+        As you can, see (a, b) =&gt; a + b means a function that accepts two arguments
+        named a and b. Upon the execution, it evaluates the expression a + b and returns the
+        result.
+        ● If we have only one argument, then parentheses around parameters can be omitted,
+        making that even shorter.
+        For example:
+
+        let double = n =&gt; n * 2;
+        // roughly the same as: let double = function(n) { return n * 2 }
+        alert( double(3) ); // 6
+        ● If there are no arguments, parentheses will be empty (but they should be present):
+        ● let sayHi = () =&gt; alert(&quot;Hello!&quot;);
+        ●
+        sayHi();
+        Arrow functions can be used in the same way as Function Expressions.
+        For instance, to dynamically create a function:
+        let age = prompt(&quot;What is your age?&quot;, 18);
+
+        let welcome = (age &lt; 18) ?
+        () =&gt; alert(&#39;Hello&#39;) :
+        () =&gt; alert(&quot;Greetings!&quot;);
+        welcome();
+        Arrow functions may appear unfamiliar and not very readable at first, but that quickly
+        changes as the eyes get used to the structure.
+        They are very convenient for simple one-line actions, when we’re just too lazy to write
+        many words.
+        Multiline arrow functions
+        The examples above took arguments from the left of =&gt; and evaluated the right-side
+        expression with them.
+        Sometimes we need something a little bit more complex, like multiple expressions or
+        statements. It is also possible, but we should enclose them in curly braces. Then use a
+        normal return within them.
+        Like this:
+
+        let sum = (a, b) =&gt; { // the curly brace opens a multiline function
+        let result = a + b;
+        return result; // if we use curly braces, then we need an explicit &quot;return&quot;
+        };
+        alert( sum(1, 2) ); // 3
+        More to come
+        Here we praised arrow functions for brevity. But that’s not all!
+        Arrow functions have other interesting features.
+        To study them in-depth, we first need to get to know some other aspects of JavaScript, so
+        we’ll return to arrow functions later in the chapter Arrow functions revisited.
+        For now, we can already use arrow functions for one-line actions and callbacks.
+        Summary
+        Arrow functions are handy for one-liners. They come in two flavors:
+        1. Without curly braces: (...args) =&gt; expression – the right side is an expression: the function
+        evaluates it and returns the result.
+        2. With curly braces: (...args) =&gt; { body } – brackets allow us to write multiple statements
+        inside the function, but we need an explicit return to return something.
+
+        JavaScript Classes
+
+        A class is a type of function, but instead of using the keyword function to initiate it, we use
+        the keyword class, and the properties are assigned inside a constructor() method.
+        class Car {
+          constructor(brand) {
+            this.carname = brand;
+          }
+          present() {
+            return &quot;I have a &quot; + this.carname;
+          }
+        }
+        mycar = new Car(&quot;Ford&quot;);
+        document.getElementById(&quot;demo&quot;).innerHTML = mycar.present();
+        Sending parameter
+        class Car {
+          constructor(brand) {
+            this.carname = brand;
+          }
+          present(x) {
+            return x + &quot;, I have a &quot; + this.carname;
+          }
+        }
+        mycar = new Car(&quot;Ford&quot;);
+        document.getElementById(&quot;demo&quot;).innerHTML = mycar.present(&quot;Hello&quot;);
+        Filter
+        The filter() method creates an array filled with all array elements that pass a test (provided
+        as a function).
+        Note: filter() does not execute the function for array elements without values.
+        Note: filter() does not change the original array.
+        Example
+        Return an array of all the values in the ages array that are 18 or over:
+        var ages = [32, 33, 16, 40];
+        function checkAdult(age) {
+          return age &gt;= 18;
+        }
+        function myFunction() {
+          document.getElementById(&quot;demo&quot;).innerHTML = ages.filter(checkAdult);
+        }
+        Default Parameters in javascript :
+
+        If a function in JavaScript is called with missing arguments (less than declared),
+        the missing values are set to undefined.
+        Sometimes this is acceptable, but sometimes it is better to assign a default
+        value to the parameter:
+
+        Example
+
+        function myFunction(x, y) {
+        if (y === undefined) {
+        y = 2;
+        }}
+        ECMAScript 2015 allows default parameter values in the function declaration:
+
+        function (x, y = 2) {
+        // function code
+        }
+        JavaScript Template Literals:
+        Template Literals use back-ticks (``) rather than the quotes (&quot;&quot;) to define a
+        string.
+        Template literals allow variables in strings using back-ticks.
+        With template literals, you can use both single and double quotes inside a
+        string:
+
+        Example
+
+        let text = `He&#39;s often called &quot;Johnny&quot;`;
+        Multiline Strings
+        Template literals allows multiline strings:
+
+        Example
+
+        let text =
+        `The quick
+        brown fox
+        jumps over
+        the lazy dog`;
+        Interpolation
+
+        Template literals provide an easy way to interpolate variables and expressions
+        into strings.
+        The method is called string interpolation.
+        The syntax is:
+        ${...}
+
+        Variable Substitutions
+        Template literals allows variables in strings:
+
+        Example
+
+        let firstName = &quot;John&quot;;
+        let lastName = &quot;Doe&quot;;
+        let text = `Welcome ${firstName,}, ${firstName,}`;
+        The conditional (ternary) operator is the only JavaScript operator that takes three operands: a
+        condition followed by a question mark (?), then an expression to execute if the condition is
+
+        truthy followed by a colon (:), and finally the expression to execute if the condition is falsy. This
+        operator is frequently used as a shortcut for the if statement.
+        SYNTAX :
+        condition ? exprIfTrue : exprIfFalse
+
+        EXAMPLE :
+        var age = 26;
+        var beverage = (age &gt;= 21) ? &quot;Beer&quot; : &quot;Juice&quot;;
+        console.log(beverage); // &quot;Beer&quot;
+        One common usage is to handle a value that may be null:
+        let greeting = person =&gt; {
+        let name = person ? person.name : `stranger`
+        return `Howdy, ${name}`
+        }
+        console.log(greeting({name: `Alice`})); // &quot;Howdy, Alice&quot;
+        console.log(greeting(null)); // &quot;Howdy, stranger&quot;
+        Optional chaining (?.) in Javascript :
+        The optional chaining ‘?.’ is an error-proof way to access nested object properties, even if an
+        intermediate property doesn’t exist.
+        The optional chaining operator (?.) allows you to access the value of a property located
+        deep within a chain of objects without explicitly checking if each reference in the chain is null or
+        undefined.
+        If one of the references in the chain is null or undefined, the optional chaining operator (?.)
+        will short circuit and return undefined.
+        rest parameters are the variable arguments parameters which can take multiple arguments. rest
+        parameters are passed by ... (three dots). they are passed at last with in a function with other
+        normal parameters
+        SYNTAX :
+        function f(a, b, ...theArgs) {
+        // ...
+        }
+        EXAMPLE :
+        function myFun(a, b, ...manyMoreArgs) {
+        console.log(&quot;a&quot;, a)
+        console.log(&quot;b&quot;, b)
+        console.log(&quot;manyMoreArgs&quot;, manyMoreArgs)
+        }
+        myFun(&quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;, &quot;five&quot;, &quot;six&quot;)
+
+        // Console Output:
+        // a, one
+        // b, two
+        // manyMoreArgs, [&quot;three&quot;, &quot;four&quot;, &quot;five&quot;, &quot;six&quot;]
+        Spread syntax (...) in javascript :
+        Spread syntax (...) allows an iterable such as an array expression or string to be expanded in
+        places where zero or more arguments (for function calls) or elements (for array literals) are
+        expected, or an object expression to be expanded in places where zero or more key-value pairs
+        (for object literals) are expected.
+        Spread syntax looks similar to rest parameters, also using ..., but does quite the opposite.
+        Spread syntax converts an array to the list of elements when passed to functions
+        Destructuring assignment in javascript :
+        The destructuring assignment syntax is a JavaScript expression that makes it possible to
+        unpack values from arrays, or properties from objects, into distinct variables.
+        EXAMPLE:
+        let a, b, rest;
+        [a, b] = [10, 20];
+        console.log(a); // 10
+
+        console.log(b); // 20
+        [a, b, ...rest] = [10, 20, 30, 40, 50];
+        console.log(a); // 10
+        console.log(b); // 20
+        console.log(rest); // [30, 40, 50]
+        ({ a, b } = { a: 10, b: 20 });
+        console.log(a); // 10
+        console.log(b); // 20
+
+        ({a, b, ...rest} = {a: 10, b: 20, c: 30, d: 40});
+        console.log(a); // 10
+        console.log(b); // 20
+        console.log(rest); // {c: 30, d: 40}
+        Object destructuring in javascript :
+        EXAMPLE :
+
+        const user = {
+        id: 42,
+        is_verified: true
+        };
+        const {id, is_verified} = user;
+        console.log(id); // 42
+        console.log(is_verified); // true
+        Promises :
+        The Promise object represents the eventual completion (or failure) of an asynchronous
+        operation and its resulting value.A Promise is a proxy for a value not necessarily known when
+        the promise is created. It allows you to associate handlers with an asynchronous action&#39;s
+        eventual success value or failure reason. This lets asynchronous methods return values like
+        synchronous methods: instead of immediately returning the final value, the asynchronous
+        method returns a promise to supply the value at some point in the future.
+
+        A Promise is in one of these states:
+        ● pending: initial state, neither fulfilled nor rejected.
+        ● fulfilled: meaning that the operation was completed successfully.
+        ● rejected: meaning that the operation failed.
+        A pending promise can either be fulfilled with a value or rejected with a reason (error). When
+        either of these options happens, the associated handlers queued up by a promise then methods
+        are called. If the promise has already been fulfilled or rejected when a corresponding handler is
+        attached, the handler will be called, so there is no race condition between an asynchronous
+        operation completing and its handlers being attached.
+        As the Promise.prototype.then() and Promise.prototype.catch() methods return
+        promises, they can be chained.
+
+        The methods promise.then(), promise.catch(), and promise.finally() are used to
+        associate further action with a promise that becomes settled.
+        The .then() method takes up to two arguments; the first argument is a callback function for
+        the resolved case of the promise, and the second argument is a callback function for the
+        rejected case. Each .then() returns a newly generated promise object, which can optionally
+        be used for chaining; for example:
     </P>
+
+
+    <script>
+
+        // document.getElementById("demo").innerHTML = "Hello JavaScript!";
+
+
+        // document.getElementById("myBtn").addEventListener("click", displayDate);
+
+        // function displayDate() {
+        //     document.getElementById("demo").innerHTML = Date();
+        // }
+
+
+        // var para = document.createElement("p");
+        // var node = document.createTextNode("This is a new.");
+        // para.appendChild(node);
+
+        // var element = document.getElementById("div1");
+        // element.appendChild(para);
+
+
+        // var ages = [32, 33, 12, 40];
+
+        // function checkAdult(age) {
+        //     return age >= document.getElementById("ageToCheck").value;
+        // }
+
+        // function myFunction() {
+        //     document.getElementById("demo").innerHTML = ages.filter(checkAdult);
+        // }
+
+
+        // let firstName = "John";
+        // let lastName = "Doe";
+
+        // let text = `<br>Welcome ${firstName} ${lastName} to the city kolkata!`;
+
+        // document.getElementById("demo").innerHTML = text;
+
+
+        // let arr1 = [1, -2, 3, 4];
+        // let arr2 = [8, 3, -8, 1];
+
+        // alert("MAX VALUE : " + Math.max(...arr1, ...arr2)); // 8
+
+        // let arr = [3, 5, 1];
+        // let arr3 = [8, 9, 15];
+        // let merged = [0, ...arr, 2, ...arr2];
+
+        // alert("MERGED ARRAY : " + merged); // 0,3,5,1,2,8,9,15
+
+        // let str = "HELLO";
+        // alert([...str]); // H,E,L,L,O
+
+
+        // document.addEventListener("DOMContentLoaded", () => {
+
+        //     function displayAsyncResult(value) {
+        //         document.getElementById("asyncDemo").innerHTML = value;
+        //     }
+
+        //     async function getGreeting() {
+        //         return "Hello";
+        //     }
+
+        //     getGreeting()
+        //         .then(displayAsyncResult)
+        //         .catch(displayAsyncResult);
+
+        // });
+
+
+        // function myDisplayer(some) {
+        //     document.getElementById("demo").innerHTML = some;
+        // }
+        // let myPromise = new Promise(function (myResolve, myReject) {
+        //     let x = 0;
+
+        //     // The producing code (this may take some time)
+
+        //     if (x == 0) {
+        //         myResolve("OK");
+        //     } else {
+        //         myReject("Error");
+        //     }
+        // });
+        // myPromise.then(
+        //     function (value) { myDisplayer(value); },
+        //     function (error) { myDisplayer(error); }
+        // );
+
+
+        async function myDisplay()
+        {
+            let myPromise=new Promise(function(myResolve,myReject)
+            {
+                setTimeout(function(){myResolve("Welcome to EjobIndia !!");},3000);
+            });
+            document.getElementById("demo").innerHTML=await myPromise;
+        }
+        myDisplay();
+
+
+
+    </script>
 </body>
 
 </html>

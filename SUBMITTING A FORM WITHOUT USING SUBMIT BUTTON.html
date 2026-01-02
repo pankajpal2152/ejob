@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Submit (No Server)</title>
+
+    <script type="text/javascript">
+        function submitForm() {
+            console.log("Form submitted");
+
+            console.log("Username:", document.myForm.user.value);
+
+            alert("Form handled in JavaScript. Check console.");
+            return false; // prevent POST
+        }
+    </script>
+</head>
+
+<body>
+
+    <form name="myForm" onsubmit="return submitForm();">
+        Username:
+        <input type="text" name="user" placeholder="Enter username" required>
+        <br><br>
+
+        <a href="#" onclick="submitForm(); return false;">Go</a>
+    </form>
+
+</body>
+
+</html>

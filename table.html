@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Table Task</title>
+
+    <style>
+        /* ===== GLOBAL ===== */
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            padding: 40px;
+        }
+
+        h2 {
+            color: #fff;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* ===== COMMON CARD ===== */
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+            margin-bottom: 50px;
+            overflow: hidden;
+        }
+
+        /* ===== TABLE BASE ===== */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        th,
+        td {
+            padding: 12px;
+        }
+
+        th {
+            background: #2c2f4a;
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background: #f4f6f8;
+        }
+
+        tr:hover {
+            background: #e6e9ff;
+            transition: .3s;
+        }
+
+        /* =====================================================
+   1️⃣ MODERN ORDER TABLE (LIKE FIRST IMAGE)
+   ===================================================== */
+        .order-header {
+            background: #2c2f4a;
+            color: #fff;
+            padding: 15px;
+            font-size: 18px;
+        }
+
+        /* =====================================================
+   2️⃣ SWIMMING TIMETABLE (LIKE SECOND IMAGE)
+   ===================================================== */
+        .timetable th {
+            background: #eaeaea;
+            color: #000;
+        }
+
+        .timetable td {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .public {
+            background: #0097d7;
+        }
+
+        .aqua {
+            background: #e91e63;
+        }
+
+        .lane {
+            background: #8bc34a;
+        }
+
+        .kids {
+            background: #ff9800;
+        }
+
+        .education {
+            background: #00bfa5;
+        }
+
+        /* =====================================================
+   3️⃣ TABLE-LAYOUT DEMO (LIKE THIRD IMAGE)
+   ===================================================== */
+        .layout-fixed {
+            table-layout: fixed;
+        }
+
+        .layout-fixed td {
+            border: 1px solid #999;
+        }
+
+        .layout-auto {
+            table-layout: auto;
+        }
+
+        .layout-auto td {
+            border: 1px solid #999;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media(max-width:768px) {
+            body {
+                padding: 15px;
+            }
+
+            table {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================================================= -->
+    <h2>1. Modern Fancy Order Table</h2>
+    <div class="card">
+        <div class="order-header">Order Details</div>
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Order ID</th>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Qty</th>
+                <th>Total</th>
+            </tr>
+            <tr>
+                <td>2025-01-02</td>
+                <td>200398</td>
+                <td>iPhone X</td>
+                <td>₹999</td>
+                <td>1</td>
+                <td>₹999</td>
+            </tr>
+            <tr>
+                <td>2025-01-01</td>
+                <td>200397</td>
+                <td>Samsung S8</td>
+                <td>₹756</td>
+                <td>1</td>
+                <td>₹756</td>
+            </tr>
+            <tr>
+                <td>2024-12-30</td>
+                <td>200396</td>
+                <td>Game Controller</td>
+                <td>₹22</td>
+                <td>2</td>
+                <td>₹44</td>
+            </tr>
+            <tr>
+                <td>2024-12-28</td>
+                <td>200395</td>
+                <td>MacBook Pro</td>
+                <td>₹2199</td>
+                <td>1</td>
+                <td>₹2199</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- ================================================= -->
+    <h2>2. Weekly Swimming Timetable</h2>
+    <div class="card">
+        <table class="timetable">
+            <tr>
+                <th>Day</th>
+                <th>Morning</th>
+                <th>Midday</th>
+                <th>Evening</th>
+            </tr>
+            <tr>
+                <th>Monday</th>
+                <td class="public">Public Swim</td>
+                <td class="aqua">Aquacise</td>
+                <td class="lane">Lane Swim</td>
+            </tr>
+            <tr>
+                <th>Tuesday</th>
+                <td class="education">Lessons</td>
+                <td class="lane">Lane Swim</td>
+                <td class="public">Public Swim</td>
+            </tr>
+            <tr>
+                <th>Wednesday</th>
+                <td class="public">Public Swim</td>
+                <td class="kids">Kids Class</td>
+                <td class="lane">Lane Swim</td>
+            </tr>
+            <tr>
+                <th>Thursday</th>
+                <td class="education">Lessons</td>
+                <td class="aqua">Aquacise</td>
+                <td class="public">Public Swim</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- ================================================= -->
+    <h2>3. CSS table-layout Property Demo</h2>
+    <div class="card" style="padding:15px">
+        <h3>table-layout: fixed</h3>
+        <table class="layout-fixed">
+            <tr>
+                <td>This is very long content that does not expand column width</td>
+                <td>Demo</td>
+                <td>Demo</td>
+            </tr>
+            <tr>
+                <td>Demo</td>
+                <td>Demo</td>
+                <td>Demo</td>
+            </tr>
+        </table>
+
+        <br>
+
+        <h3>table-layout: auto</h3>
+        <table class="layout-auto">
+            <tr>
+                <td>This is very long content that expands column width automatically</td>
+                <td>Demo</td>
+                <td>Demo</td>
+            </tr>
+            <tr>
+                <td>Demo</td>
+                <td>Demo</td>
+                <td>Demo</td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+
+</html>

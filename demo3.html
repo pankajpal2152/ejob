@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Example.</title>
+    <!--How to write css -->
+    <style type="text/css">
+        table {
+            /*Table width will be gets calculated 100% of parent container i.e div*/
+            width: 100%;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            text-align: center;
+        }
+
+        /*Whenever user will put mouse cursor on the table then table row background will change into different color.*/
+        table tr:hover {
+            /*Adding some delay using CSS-3 transition effects*/
+            transition: all 0.6s ease-in-out;
+            background-color: purple;
+            color: #fff;
+        }
+
+        div {
+            padding: 12px 14px;
+            border: 1px solid #000;
+            width: 44%;
+            float: left;
+            margin-left: 10px;
+            /*3D elevation*/
+            box-shadow: 10px 10px 10px #ccc;
+        }
+
+        header {
+            padding: 12px 14px;
+            background-color: #E88925;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <header>
+            <h4>Displaying all Employee Details:</h4>
+        </header>
+        <table border="2px" bordercolor="#D11F52" bgcolor="#E9F29B" cellspacing="5px" cellpadding="5px">
+            <tr>
+                <th>Empno:</th>
+                <th>Ename:</th>
+                <th>Age:</th>
+                <th>Gender:</th>
+                <th>Sal:</th>
+            </tr>
+            <tr>
+                <td>1001</td>
+                <td>John</td>
+                <td>33</td>
+                <td>Male</td>
+                <td>22000</td>
+            </tr>
+            <tr>
+                <td>1002</td>
+                <td>Diana</td>
+                <td>22</td>
+                <td>Female</td>
+                <td>21000</td>
+            </tr>
+            <tr>
+                <td>1003</td>
+                <td>Smith</td>
+                <td>31</td>
+                <td>Male</td>
+                <td>15000</td>
+            </tr>
+            <tr>
+                <td>1004</td>
+                <td>Manisha</td>
+                <td>42</td>
+                <td>Female</td>
+                <td>12000</td>
+            </tr>
+        </table>
+    </div>
+
+    <div>
+        <header>
+            <h4>Details of Employee:</h4>
+        </header>
+        <table border="2px" cellspacing="5px" cellpadding="5px" bgcolor="#33D486" bordercolor="#5C1422">
+            <tr>
+                <th>Empno:</th>
+                <td>1001</td>
+            </tr>
+            <tr>
+                <th>Ename:</th>
+                <td>John Doe</td>
+            </tr>
+            <tr>
+                <th>Age:</th>
+                <td>33</td>
+            </tr>
+            <tr>
+                <th>Gender:</th>
+                <td>Male</td>
+            </tr>
+            <tr>
+                <th>Sal:</th>
+                <td>12000</td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+
+</html>

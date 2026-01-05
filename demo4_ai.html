@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rowspan vs Colspan</title>
+
+    <style>
+        body {
+            font-family: Cambria, Georgia, serif;
+            background: #f4f6f8;
+            padding: 20px;
+        }
+
+        .wrapper {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            width: 45%;
+            background: #EDF55D;
+            border: 1px solid #000;
+            box-shadow: 10px 10px 10px #ccc;
+        }
+
+        header {
+            background: #991F48;
+            color: #fff;
+            padding: 12px;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        th,
+        td {
+            border: 2px solid #000;
+            padding: 8px;
+        }
+
+        tbody tr:hover {
+            background: purple;
+            color: #fff;
+            transition: .4s;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2 align="center">HTML Table: Rowspan vs Colspan</h2>
+
+    <div class="wrapper">
+
+        <!-- ================= COLSPAN ================= -->
+        <div class="card">
+            <header>Monthly Savings (Colspan)</header>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Month</th>
+                        <th>Savings</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>JAN</td>
+                        <td>₹1000</td>
+                    </tr>
+                    <tr>
+                        <td>FEB</td>
+                        <td>₹1200</td>
+                    </tr>
+                    <tr>
+                        <td>MAR</td>
+                        <td>₹800</td>
+                    </tr>
+                    <tr>
+                        <td>APR</td>
+                        <td>₹1000</td>
+                    </tr>
+                    <tr>
+                        <td>MAY</td>
+                        <td>₹1000</td>
+                    </tr>
+                </tbody>
+
+                <tfoot>
+                    <tr>
+                        <td colspan="2"><b>Total Savings: ₹5000</b></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <!-- ================= ROWSPAN ================= -->
+        <div class="card">
+            <header>Monthly Savings (Rowspan)</header>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Month</th>
+                        <th>Savings</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>JAN</td>
+                        <td>1000</td>
+                        <td rowspan="4"><b>4000</b></td>
+                    </tr>
+                    <tr>
+                        <td>FEB</td>
+                        <td>1200</td>
+                    </tr>
+                    <tr>
+                        <td>MAR</td>
+                        <td>800</td>
+                    </tr>
+                    <tr>
+                        <td>APR</td>
+                        <td>1000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

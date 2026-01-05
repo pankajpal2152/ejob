@@ -1,0 +1,16 @@
+// Swap 2 variables
+// (b) Without using third variable (Optimal)
+
+#include <stdio.h>
+
+int main()
+{
+    int a = 5, b = 10;
+
+    a = a + b;
+    b = a - b;
+    a = a - b;
+
+    printf("a=%d b=%d", a, b);
+    return 0;
+}

@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import Header from './Header';
 import Content from './Content';
+import './App.css';
 
 interface AppState {
   header: string;
@@ -11,14 +12,14 @@ class App extends Component<{}, AppState> {
   constructor(props: {}) {
     super(props);
     this.state = {
-      header: 'Welcome to TypeScript',
+      header: 'Hello React + TypeScript',
       content: 'State is managed in the parent component'
     };
   }
 
   render() {
     return (
-      <div>
+      <div className="card">
         <Header headerProp={this.state.header} />
         <Content contentProp={this.state.content} />
       </div>

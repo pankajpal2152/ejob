@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>EJOBINDIA Demo Page</title>
+
+        <style>
+        /* Immediate child selector */
+        #slider > img {
+            height: 300px;
+            width: 100%;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            color: #fff;
+            text-shadow: 2px 2px 2px red;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-decoration: underline;
+            background-color: #27CCF5;
+            padding: 12px 14px;
+        }
+
+        fieldset {
+            box-shadow: 2px 2px 2px #ccc;
+            text-align: justify;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            padding-left: 12px;
+            padding-right: 12px;
+            border: 1px solid #000;
+            margin-bottom: 20px;
+        }
+
+        fieldset > legend {
+            text-align: center;
+            background-color: #DE842C;
+            color: #fff;
+            border-radius: 20px;
+            padding: 6px 14px;
+        }
+
+        #map1 > iframe {
+            width: 100%;
+            height: 400px;
+        }
+
+        footer {
+            background-color: #000;
+            padding: 12px 14px;
+            color: #fff;
+            clear: both;
+        }
+
+        body {
+            background-color: #ccc;
+        }
+
+        main {
+            padding: 12px 14px;
+            background-color: #fff;
+            margin-left: 25px;
+            margin-right: 25px;
+        }
+
+        /* Universal selector */
+        * {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            box-shadow: 10px 10px 10px #ccc;
+        }
+
+        /* Hover effect on paragraphs */
+        p:hover {
+            transition: all 0.6s ease-in-out;
+            background-color: #000;
+            color: #fff;
+        }
+
+        /* Float layout */
+        .abc {
+            width: 20%;
+            text-align: center;
+            padding: 12px 14px;
+            background-color: purple;
+            color: #fff;
+            float: left;
+            margin-left: 20px;
+        }
+
+        .pqr {
+            margin-left: 10px;
+            float: left;
+            width: 40%;
+            padding: 12px 14px;
+            background-color: orange;
+            color: #fff;
+        }
+    </style>
+    </head>
+
+    <body>
+
+        <!-- HEADER -->
+        <header>
+            <h1>Welcome to EJOBINDIA</h1>
+        </header>
+
+        <!-- SLIDER -->
+        <div id="slider">
+            <img
+                src="download.jpeg"
+                alt="Banner">
+        </div>
+
+        <!-- MAIN CONTENT -->
+        <main>
+
+            <!-- FIELDSET 1 -->
+            <fieldset>
+                <legend>ABOUT US</legend>
+                <p>
+                    EJOBINDIA is a platform designed to connect job seekers with
+                    opportunities. Hover over this paragraph to see the CSS
+                    hover
+                    effect in action.
+                </p>
+                <p>
+                    This paragraph also demonstrates the hover transition and
+                    the
+                    universal box-shadow applied using the * selector.
+                </p>
+            </fieldset>
+
+            <!-- FLOAT LAYOUT -->
+            <fieldset>
+                <legend>SERVICES</legend>
+
+                <div class="abc">
+                    ABC Block
+                    <p>Left column</p>
+                </div>
+
+                <div class="pqr">
+                    PQR Block
+                    <p>Wider content area using float layout</p>
+                </div>
+
+                <div style="clear: both;"></div>
+            </fieldset>
+
+            <!-- MAP -->
+            <fieldset>
+                <legend>LOCATE US</legend>
+                <div id="map1">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.2783500555165!2d88.42902937541348!3d22.5686904331133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0275a38c95edfb%3A0x5f95acf3cc48628d!2sEjobindia!5e0!3m2!1sen!2sin!4v1767705951144!5m2!1sen!2sin"
+                        width="600" height="450" style="border:0;"
+                        allowfullscreen loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </fieldset>
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer>
+            <p align="right">Copyright © EJOBINDIA 2025</p>
+        </footer>
+
+    </body>
+</html>

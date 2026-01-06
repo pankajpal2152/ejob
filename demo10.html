@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>EJOBINDIA</title>
+        <!--Adding Bootstrap-4 CSS CDN-->
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+            integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+            crossorigin="anonymous">
+        <!--Adding Bootstrap-4 JS CDN-->
+        <script
+            src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+            crossorigin="anonymous"></script>
+        <style type="text/css">
+        .carousel-item>img{
+            height:300px;
+        }
+        fieldset p {
+            text-align: justify;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        #map>iframe{
+            width:100%;
+            height:650px;
+        }
+        footer{
+            background-color: #000;
+            color:#fff;
+        }
+    </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <a class="navbar-brand" href="#">EJOBINDIA</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span
+                                class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#"
+                            role="button" data-toggle="dropdown"
+                            aria-expanded="false">
+                            Products
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Camera</a>
+                            <a class="dropdown-item" href="#">SmartPhone</a>
+                            <a class="dropdown-item" href="#">Laptop</a>
+                            <a class="dropdown-item" href="#">Television</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contacts</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search"
+                        placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0"
+                        type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+        <br /><br />
+        <!--Adding Carousel-->
+        <div id="carouselExampleCaptions" class="carousel slide"
+            data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleCaptions" data-slide-to="0"
+                    class="active"></li>
+                <li data-target="#carouselExampleCaptions"
+                    data-slide-to="1"></li>
+                <li data-target="#carouselExampleCaptions"
+                    data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="download.jpeg" class="d-block w-100"
+                        alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>First slide label</h5>
+                        <p>Some representative placeholder content for the first
+                            slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="nature.jpeg" class="d-block w-100"
+                        alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Second slide label</h5>
+                        <p>Some representative placeholder content for the
+                            second slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="download (1).jpeg" class="d-block w-100"
+                        alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Second slide label</h5>
+                        <p>Some representative placeholder content for the
+                            second slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="download (2).jpeg" class="d-block w-100"
+                        alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Third slide label</h5>
+                        <p>Some representative placeholder content for the third
+                            slide.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button"
+                data-target="#carouselExampleCaptions" data-slide="prev">
+                <span class="carousel-control-prev-icon"
+                    aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button"
+                data-target="#carouselExampleCaptions" data-slide="next">
+                <span class="carousel-control-next-icon"
+                    aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </button>
+        </div>
+        <!--end of Carousel-->
+
+        <main class="container-fluid">
+            <fieldset class="card p-3 m-3">
+                <legend>
+                    <h4>ABOUT US :</h4>
+                </legend>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Unde obcaecati vitae ea, consectetur vel sit aliquam porro
+                    suscipit veniam, repellat, excepturi quibusdam nam maxime
+                    sequi nulla quisquam doloribus molestiae asperiores?
+                    Impedit qui eius minus libero minima quis placeat commodi
+                    dolore, quia pariatur quas magni repellat molestias,
+                    possimus ratione dolores. Id vel ea impedit reprehenderit
+                    repudiandae facere dignissimos at pariatur unde.
+                    Hic saepe repellendus quasi quo ducimus quibusdam atque,
+                    odit provident perferendis incidunt eaque non, blanditiis
+                    vitae debitis obcaecati et minima laboriosam. Reiciendis,
+                    velit magni? Explicabo earum tenetur obcaecati quae
+                    corporis!
+                </p>
+            </fieldset>
+
+            <fieldset class="card p-3 m-3">
+                <legend>
+                    <h4>LOCATE US:</h4>
+                </legend>
+                <div class="row">
+                    <div class="col-lg-6 border-right">
+                        <div id="map">
+                            <!--Google Map will appear here-->
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.278482443191!2d88.42902937437118!3d22.568685479494494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0275a38c95edfb%3A0x5f95acf3cc48628d!2sEjobindia!5e0!3m2!1sen!2sin!4v1767674932505!5m2!1sen!2sin"
+                                style="border:0;" allowfullscreen loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <form method="POST">
+                            <header class="modal-header"><h4>Contact
+                                    Us:</h4></header>
+                            <div class="form-group">Name : <input type="text"
+                                    name="t1" id="t1" required
+                                    class="form-control"></div>
+                            <div class="form-group">Phone : <input type="number"
+                                    name="ph1" id="ph1" required
+                                    class="form-control"></div>
+                            <div class="form-group">Email : <input type="email"
+                                    name="em1" id="em1" required
+                                    class="form-control"></div>
+                            <div class="form-group">Message : <textarea
+                                    name="fd" id="fd" required cols="30"
+                                    rows="10"
+                                    class="form-control"></textarea></div>
+                            <div class="form-group"><button
+                                    class="btn btn-lg btn-outline-primary">Submit</button>
+                                <button type="reset"
+                                    class="btn btn-lg btn-outline-danger">Reset</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+
+            </fieldset>
+        </main>
+
+        <!-- Footer -->
+        <footer class="text-center text-lg-start bg-body-tertiary text-muted">
+            <!-- Section: Social media -->
+            <section
+                class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+                <!-- Left -->
+                <div class="me-5 d-none d-lg-block">
+                    <span>Get connected with us on social networks:</span>
+                </div>
+                <!-- Left -->
+
+                <!-- Right -->
+                <div>
+                    <a href class="me-4 text-reset">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href class="me-4 text-reset">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href class="me-4 text-reset">
+                        <i class="fab fa-google"></i>
+                    </a>
+                    <a href class="me-4 text-reset">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href class="me-4 text-reset">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href class="me-4 text-reset">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+                <!-- Right -->
+            </section>
+            <!-- Section: Social media -->
+
+            <!-- Section: Links  -->
+            <section class>
+                <div class="container text-center text-md-start mt-5">
+                    <!-- Grid row -->
+                    <div class="row mt-3">
+                        <!-- Grid column -->
+                        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                            <!-- Content -->
+                            <h6 class="text-uppercase fw-bold mb-4">
+                                <i class="fas fa-gem me-3"></i>Company name
+                            </h6>
+                            <p>
+                                Here you can use rows and columns to organize
+                                your footer content. Lorem ipsum
+                                dolor sit amet, consectetur adipisicing elit.
+                            </p>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                            <!-- Links -->
+                            <h6 class="text-uppercase fw-bold mb-4">
+                                Products
+                            </h6>
+                            <p>
+                                <a href="#!" class="text-reset">Angular</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-reset">React</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-reset">Vue</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-reset">Laravel</a>
+                            </p>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                            <!-- Links -->
+                            <h6 class="text-uppercase fw-bold mb-4">
+                                Useful links
+                            </h6>
+                            <p>
+                                <a href="#!" class="text-reset">Pricing</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-reset">Settings</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-reset">Orders</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-reset">Help</a>
+                            </p>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div
+                            class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                            <!-- Links -->
+                            <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                            <p><i class="fas fa-home me-3"></i> New York, NY
+                                10012, US</p>
+                            <p>
+                                <i class="fas fa-envelope me-3"></i>
+                                info@example.com
+                            </p>
+                            <p><i class="fas fa-phone me-3"></i> + 01 234 567
+                                88</p>
+                            <p><i class="fas fa-print me-3"></i> + 01 234 567
+                                89</p>
+                        </div>
+                        <!-- Grid column -->
+                    </div>
+                    <!-- Grid row -->
+                </div>
+            </section>
+            <!-- Section: Links  -->
+
+            <!-- Copyright -->
+            <div class="text-center p-4"
+                style="background-color: rgba(0, 0, 0, 0.05);">
+                © 2021 Copyright:
+                <a class="text-reset fw-bold"
+                    href="https://mdbootstrap.com/">MDBootstrap.com</a>
+            </div>
+            <!-- Copyright -->
+        </footer>
+        <!-- Footer -->
+    </body>
+</html>

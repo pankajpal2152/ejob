@@ -1,0 +1,13 @@
+/* Class Selectors */
+.abc {
+    color: green;
+}
+
+.pqr {
+    color: yellow;
+}
+
+/* Universal Selector */
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}

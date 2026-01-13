@@ -1,0 +1,38 @@
+JavaScript ?
+1)JavaScript is a Browser side or Client side scripting
+language.
+Which mainly runs from the browser in order to manipulate
+DOM structure.
+FAQ: What is DOM[HTML] ?
+DOM stands for Document Object Model. it is a pattern which describes the html tree pattern.
+
+2)JavaScript is an Interpreted Language.
+Means it is used to execute program line wise.
+If it gets any error at any line , it will stop the
+execution and start the program from the beginning.
+Line1
+Line2 -->Error STOP.until ,unless we correct the error
+Line3 javaScript start to check from the beginning.
+PHP,Python they are also Interpreted Language like JS.
+3)JavaScript is "Dynamically Typed" or "Loosely typed"
+language like PHP & Python.
+Because here in JavaScript we dont need to declare variable datatype , depends on what value it contains
+JS automatically decides the datatype on runtime , this makes JS Loosely or Dynamically Typed Language.
+Here all variables are declared by var keyword.
+C JS PHP PYTHON
+---------------------------------------------------------------------------
+int x =10; var x=10;//number $x=10;//integer x=10;//
+float x=10.1; var x=10.1;//number $x=10.1;//double x=10.1;
+char x='a'; var x='ejob';//string $x="ejob";//string x='ejob';
+4)JavaScript is a Object Oriented language better to say Prototype Oriented
+Language.
+JavaScript is consisting of built in global objects like follows
+document,console,window etc.
+5)JavaScript follows CamelCase Naming Convention.
+bgColor
+fgColor
+6)How many ways we can write JavaScript ?
+i)<script type="text/javascript"></script>[Recommended]
+ii)<script language="javascript"></script>
+Note : JavaScript was invented by Canadian computer scientist named as
+Brednen Eitch [CFO of Mozila corporation]. 1995 -> ECMASCRIPT

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JS Loops:</h1>
+    <ul>
+        <li>While</li>
+        <li>Do-While</li>
+        <li>for(Traditional)</li>
+        <li>ES-6 forOf /foreach loop</li>
+        <li>ES-6 forIn Loop</li>
+    </ul>
+    <div id="d1"></div>
+    <section id="s1"></section>
+    <script type="text/javascript">
+          //print first 10 natural numbers 1-10.
+          var i=1;
+          var result="";//string
+          while(i<=10){
+            console.log(i);
+            result+=i;
+            document.getElementById("d1").innerHTML=`${result}`;
+            i+=1;
+          }
+    //2,4,6,8,10,12
+    result="";
+    for(var i=2;i<=12;i+=2){
+         console.log(i);
+         result+=i;
+         document.getElementById("s1").innerHTML=`${result}`; 
+    }
+    
+    </script>
+
+</body>
+</html>

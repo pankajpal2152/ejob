@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="d1"></div>
+        <script type="text/javascript">
+           //if else conditional block example.
+             var x = 0;
+             //now we need to check whether it is Odd or Even
+             if(x==0){
+                  console.log(x+" is neither odd nor even");
+                  document.getElementById("d1").innerHTML=`${x}=Neither Odd nor Even`;
+                }else{
+               
+                if(x%2==0){
+                console.log(x+"=Even");
+                document.getElementById("d1").innerHTML=`${x}=Even`;
+
+             }else if(x%2!=0){
+                console.log(x+"=Odd");
+                document.getElementById("d1").innerHTML=`${x}=Odd`;
+             }
+             }
+             
+      </script>
+
+    </body>
+</html>

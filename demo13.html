@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+       <h1>Switch-Case Example :</h1>
+       <div id="d1"></div>
+       <script type="text/javascript">
+           var d = new Date();
+           var dayNo = d.getDay();
+           switch(dayNo){
+            case 0: console.log("Sunday is a Holiday");
+                    break;
+            case 1: console.log("MonDay is a working Day");
+                    break; 
+            case 2: console.log("Tuesday is a working Day");
+                    break;
+            case 3: console.log("Wednesday is a working Day");
+                    break;
+            case 4: console.log("ThursDay is also working day");
+                    break;
+            case 5: console.log("Friday is a weekend and half Holiday");
+                    break;
+            case 6: console.log("SaturDay is a holiday");
+                    break;
+            default: console.log("N/A");
+           } 
+
+           //finding the Largest number between 2 numbers not using if-else and switch-case.
+           //use of ternery operator .
+           var x =10; var y=10;
+           var large = (x>y) ? x: y;
+           console.log("Larger number is :"+large);
+
+       </script>
+</body>
+</html>

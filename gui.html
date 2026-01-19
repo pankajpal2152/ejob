@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript GUI Programs</title>
+
+        <style>
+        body{
+            font-family: Arial, sans-serif;
+            background:#f5f7fa;
+            padding:20px;
+        }
+        h2{
+            text-align:center;
+            color:#333;
+        }
+        h3{
+            color:#444;
+            margin-top:25px;
+        }
+        .box{
+            background:#fff;
+            padding:15px;
+            border-radius:6px;
+            margin-bottom:15px;
+            box-shadow:0 2px 6px rgba(0,0,0,0.08);
+        }
+        input{
+            padding:6px;
+            width:180px;
+            margin-right:10px;
+        }
+        button{
+            padding:6px 14px;
+            background:#4a90e2;
+            color:#fff;
+            border:none;
+            border-radius:4px;
+            cursor:pointer;
+        }
+        button:hover{
+            background:#357abd;
+        }
+        p{
+            margin-top:10px;
+            font-weight:bold;
+            color:#222;
+        }
+    </style>
+    </head>
+
+    <body>
+
+        <h2>JavaScript GUI Programs</h2>
+
+        <div class="box">
+            <h3>1. Positive or Negative</h3>
+            <input type="number" id="num1">
+            <button onclick="checkSign()">Check</button>
+            <p id="res1"></p>
+        </div>
+
+        <div class="box">
+            <h3>2. Count Digits</h3>
+            <input type="number" id="num2">
+            <button onclick="countDigits()">Count</button>
+            <p id="res2"></p>
+        </div>
+
+        <div class="box">
+            <h3>3. Prime or Composite</h3>
+            <input type="number" id="num3">
+            <button onclick="checkPrime()">Check</button>
+            <p id="res3"></p>
+        </div>
+
+        <div class="box">
+            <h3>4. Palindrome Check</h3>
+            <input type="number" id="num4">
+            <button onclick="checkPalindrome()">Check</button>
+            <p id="res4"></p>
+        </div>
+
+        <div class="box">
+            <h3>5. Armstrong Number</h3>
+            <input type="number" id="num5">
+            <button onclick="checkArmstrong()">Check</button>
+            <p id="res5"></p>
+        </div>
+
+        <div class="box">
+            <h3>6. Magic Number</h3>
+            <input type="number" id="num6">
+            <button onclick="checkMagic()">Check</button>
+            <p id="res6"></p>
+        </div>
+
+        <div class="box">
+            <h3>7. Area of Circle & Rectangle</h3>
+            Radius: <input type="number" id="r"><br><br>
+            Length: <input type="number" id="l">
+            Breadth: <input type="number" id="b"><br><br>
+            <button onclick="area()">Calculate</button>
+            <p id="res7"></p>
+        </div>
+
+        <div class="box">
+            <h3>8. Fibonacci Series</h3>
+            <input type="number" id="num8">
+            <button onclick="fibo()">Show</button>
+            <p id="res8"></p>
+        </div>
+
+        <div class="box">
+            <h3>9. Series: 0 4 18 48 100</h3>
+            <p id="res9"></p>
+        </div>
+
+        <script>
+function checkSign(){
+    let n = document.getElementById("num1").value;
+    document.getElementById("res1").innerHTML =
+        n > 0 ? "Positive" : n < 0 ? "Negative" : "Zero";
+}
+
+function countDigits(){
+    let n = document.getElementById("num2").value;
+    document.getElementById("res2").innerHTML = "Digits = " + n.length;
+}
+
+function checkPrime(){
+    let n = parseInt(document.getElementById("num3").value);
+    let flag = n > 1;
+    for(let i=2;i<n;i++){
+        if(n%i==0){ flag=false; break; }
+    }
+    document.getElementById("res3").innerHTML =
+        flag ? "Prime Number" : "Composite Number";
+}
+
+function checkPalindrome(){
+    let n = document.getElementById("num4").value;
+    let rev = n.split('').reverse().join('');
+    document.getElementById("res4").innerHTML =
+        n == rev ? "Palindrome" : "Not Palindrome";
+}
+
+function checkArmstrong(){
+    let n = document.getElementById("num5").value;
+    let sum = 0;
+    for(let d of n){
+        sum += Math.pow(d, n.length);
+    }
+    document.getElementById("res5").innerHTML =
+        sum == n ? "Armstrong" : "Not Armstrong";
+}
+
+function checkMagic(){
+    let n = document.getElementById("num6").value;
+    while(n > 9){
+        let sum = 0;
+        for(let d of n) sum += parseInt(d);
+        n = sum;
+    }
+    document.getElementById("res6").innerHTML =
+        n == 1 ? "Magic Number" : "Not Magic";
+}
+
+function area(){
+    let r = document.getElementById("r").value;
+    let l = document.getElementById("l").value;
+    let b = document.getElementById("b").value;
+    document.getElementById("res7").innerHTML =
+        "Circle Area = " + (3.14*r*r) +
+        "<br>Rectangle Area = " + (l*b);
+}
+
+function fibo(){
+    let n = document.getElementById("num8").value;
+    let a=0,b=1,out="0 1 ";
+    for(let i=2;i<n;i++){
+        let c=a+b;
+        out+=c+" ";
+        a=b;b=c;
+    }
+    document.getElementById("res8").innerHTML = out;
+}
+
+// Series
+let s="";
+for(let i=0;i<5;i++){
+    s += (i*i*(i+1))+" ";
+}
+document.getElementById("res9").innerHTML = s;
+</script>
+
+</body>
+</html>

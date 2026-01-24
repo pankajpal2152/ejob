@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+           var user={
+            name:"John"
+           };
+           user.name="Monika";
+           console.log(user);
+           //var newUser = user;//shallow copy is not recommended
+            // var newUser = {...user};
+            var newUser = JSON.parse(JSON.stringify(user));
+            newUser.name = "Diana";
+           console.log(newUser,user);
+
+           var a=[10,20,30];
+           var b =[... a];
+           var c = b.splice(0,1);
+           console.log(a);//[10,20,30]
+       </script>
+    </body>
+</html>

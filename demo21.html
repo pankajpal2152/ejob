@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script type="text/javascript">
+            function handleSubmit(event){
+                event.preventDefault();
+                var word = document.getElementById("w1")?.value;
+                console.log(word,typeof(word));
+                var wordArr = word.split("");
+                console.log(wordArr);
+               var i=0; //array index always starts from zero
+                var flag=true;
+                while(i<wordArr.length){
+                    if(wordArr[i].toLowerCase()!=wordArr[wordArr.length-i-1].toLowerCase()){
+                        flag=false;
+                        break;
+                    }
+                    i++;
+                }
+                if(flag){
+                console.log("palindrome");
+                document.getElementById("d1").innerHTML=`${word}=Palindrome String`;
+                }else{
+                console.log("Not Palindrome");
+                document.getElementById("d1").innerHTML=`${word} is Not Palindrome String`;
+                }
+            }
+    </script>
+</head>
+<body>
+        <form onsubmit="handleSubmit(event)">
+        <header>Palindrome Checking:</header>
+        Enter Word : <input type="text" name="w1" id="w1" required>
+        <button>Submit</button>
+        <div id="d1"></div>
+        </form>
+</body>
+</html>

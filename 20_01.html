@@ -1,181 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>JavaScript Practice GUI</title>
 
-        <!-- Bootstrap CDN -->
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-            rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Practice GUI</title>
 
-        <style>
-    body{
-        background: linear-gradient(135deg,#667eea,#764ba2);
-        min-height:100vh;
-    }
-    .card{
-        border-radius:15px;
-        box-shadow:0 10px 25px rgba(0,0,0,.2);
-    }
-    .result{
-        font-weight:600;
-        color:#0d6efd;
-    }
-</style>
-    </head>
-    <body class="py-4">
-        <div class="container">
-            <h2 class="text-center text-white mb-4">JavaScript Logic Programs
-                (GUI)</h2>
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-            <div class="row g-4">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            min-height: 100vh;
+        }
 
-                <!-- PRIME NUMBER -->
-                <div class="col-md-6">
-                    <div class="card p-3">
-                        <h5>Prime Number Check</h5>
-                        <input type="number" id="primeInput"
-                            class="form-control mb-2"
-                            placeholder="Enter number">
-                        <button class="btn btn-primary"
-                            onclick="checkPrime()">Check</button>
-                        <div id="primeResult" class="result mt-2"></div>
-                    </div>
+        .card {
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, .2);
+        }
+
+        .result {
+            font-weight: 600;
+            color: #0d6efd;
+        }
+    </style>
+</head>
+
+<body class="py-4">
+    <div class="container">
+        <h2 class="text-center text-white mb-4">JavaScript Logic Programs
+            (GUI)</h2>
+
+        <div class="row g-4">
+
+            <!-- PRIME NUMBER -->
+            <div class="col-md-6">
+                <div class="card p-3">
+                    <h5>Prime Number Check</h5>
+                    <input type="number" id="primeInput" class="form-control mb-2" placeholder="Enter number">
+                    <button class="btn btn-primary" onclick="checkPrime()">Check</button>
+                    <div id="primeResult" class="result mt-2"></div>
                 </div>
-
-                <!-- PALINDROME STRING -->
-                <div class="col-md-6">
-                    <div class="card p-3">
-                        <h5>Palindrome String</h5>
-                        <input type="text" id="palStr" class="form-control mb-2"
-                            placeholder="Enter string">
-                        <button class="btn btn-primary"
-                            onclick="palindromeString()">Check</button>
-                        <div id="palStrResult" class="result mt-2"></div>
-                    </div>
-                </div>
-
-                <!-- STRING LENGTH -->
-                <div class="col-md-6">
-                    <div class="card p-3">
-                        <h5>String Length (No length)</h5>
-                        <input type="text" id="lenStr" class="form-control mb-2"
-                            placeholder="Enter string">
-                        <button class="btn btn-primary"
-                            onclick="stringLength()">Calculate</button>
-                        <div id="lenResult" class="result mt-2"></div>
-                    </div>
-                </div>
-
-                <!-- NAME SPLIT -->
-                <div class="col-md-6">
-                    <div class="card p-3">
-                        <h5>Name Split</h5>
-                        <input type="text" id="fullName"
-                            class="form-control mb-2"
-                            placeholder="Enter Full Name">
-                        <button class="btn btn-primary"
-                            onclick="splitName()">Split</button>
-                        <div id="nameResult" class="result mt-2"></div>
-                    </div>
-                </div>
-
-                <!-- PALINDROME NUMBER -->
-                <div class="col-md-6">
-                    <div class="card p-3">
-                        <h5>Palindrome Number</h5>
-                        <input type="number" id="palNum"
-                            class="form-control mb-2"
-                            placeholder="Enter number">
-                        <button class="btn btn-primary"
-                            onclick="palindromeNumber()">Check</button>
-                        <div id="palNumResult" class="result mt-2"></div>
-                    </div>
-                </div>
-
-                <!-- ARMSTRONG -->
-                <div class="col-md-6">
-                    <div class="card p-3">
-                        <h5>Armstrong Number</h5>
-                        <input type="number" id="armNum"
-                            class="form-control mb-2"
-                            placeholder="Enter number">
-                        <button class="btn btn-primary"
-                            onclick="armstrong()">Check</button>
-                        <div id="armResult" class="result mt-2"></div>
-                    </div>
-                </div>
-
-                <!-- MAGIC NUMBER -->
-                <div class="col-md-12">
-                    <div class="card p-3">
-                        <h5>Magic Number</h5>
-                        <input type="number" id="magicNum"
-                            class="form-control mb-2"
-                            placeholder="Enter number">
-                        <button class="btn btn-primary"
-                            onclick="magicNumber()">Check</button>
-                        <div id="magicResult" class="result mt-2"></div>
-                    </div>
-                </div>
-
             </div>
+
+            <!-- PALINDROME STRING -->
+            <div class="col-md-6">
+                <div class="card p-3">
+                    <h5>Palindrome String</h5>
+                    <input type="text" id="palStr" class="form-control mb-2" placeholder="Enter string">
+                    <button class="btn btn-primary" onclick="palindromeString()">Check</button>
+                    <div id="palStrResult" class="result mt-2"></div>
+                </div>
+            </div>
+
+            <!-- STRING LENGTH -->
+            <div class="col-md-6">
+                <div class="card p-3">
+                    <h5>String Length (No length)</h5>
+                    <input type="text" id="lenStr" class="form-control mb-2" placeholder="Enter string">
+                    <button class="btn btn-primary" onclick="stringLength()">Calculate</button>
+                    <div id="lenResult" class="result mt-2"></div>
+                </div>
+            </div>
+
+            <!-- NAME SPLIT -->
+            <div class="col-md-6">
+                <div class="card p-3">
+                    <h5>Name Split</h5>
+                    <input type="text" id="fullName" class="form-control mb-2" placeholder="Enter Full Name">
+                    <button class="btn btn-primary" onclick="splitName()">Split</button>
+                    <div id="nameResult" class="result mt-2"></div>
+                </div>
+            </div>
+
+            <!-- PALINDROME NUMBER -->
+            <div class="col-md-6">
+                <div class="card p-3">
+                    <h5>Palindrome Number</h5>
+                    <input type="number" id="palNum" class="form-control mb-2" placeholder="Enter number">
+                    <button class="btn btn-primary" onclick="palindromeNumber()">Check</button>
+                    <div id="palNumResult" class="result mt-2"></div>
+                </div>
+            </div>
+
+            <!-- ARMSTRONG -->
+            <div class="col-md-6">
+                <div class="card p-3">
+                    <h5>Armstrong Number</h5>
+                    <input type="number" id="armNum" class="form-control mb-2" placeholder="Enter number">
+                    <button class="btn btn-primary" onclick="armstrong()">Check</button>
+                    <div id="armResult" class="result mt-2"></div>
+                </div>
+            </div>
+
+            <!-- MAGIC NUMBER -->
+            <div class="col-md-12">
+                <div class="card p-3">
+                    <h5>Magic Number</h5>
+                    <input type="number" id="magicNum" class="form-control mb-2" placeholder="Enter number">
+                    <button class="btn btn-primary" onclick="magicNumber()">Check</button>
+                    <div id="magicResult" class="result mt-2"></div>
+                </div>
+            </div>
+
         </div>
+    </div>
 
-        <script>
-            // prime
-            function checkPrime(){
-                let n = parseInt(primeInput.value);
-                let flag=true;
+    <script>
+        // prime
+        function checkPrime() {
+            let n = parseInt(primeInput.value);
+            let flag = true;
 
-                if(n<=1){
-                    primeResult.innerHTML="Not Prime";
-                    return;
-                }
-                for(let i=2;i*i<=n;i++){
-                    if(n%i===0){flag=false;break;}
-                }
-                console.log("Prime Check:",flag);
-                primeResult.innerHTML=flag?"Prime Number":"Not Prime";
+            if (n <= 1) {
+                primeResult.innerHTML = "Not Prime";
+                return;
             }
-
-            // palindrome string
-            function palindromeString(){
-                let str=palStr.value;
-                let rev="";
-                for(let i=str.length-1;i>=0;i--){
-                    rev += str[i];
-                }
-                console.log("Palindrome String:",rev);
-                palStrResult.innerHTML=(str.toLowerCase()===rev.toLowerCase())? "Palindrome": "Not Palindrome";
+            for (let i = 2; i * i <= n; i++) {
+                if (n % i === 0) { flag = false; break; }
             }
+            console.log("Prime Check:", flag);
+            primeResult.innerHTML = flag ? "Prime Number" : "Not Prime";
+        }
 
-            // STRING LENGTH WITHOUT length
-            function stringLength(){
-                let str = lenStr.value;
-                let count =0;
-                for(let ch of str){count++}
-                console.log("String Length:",count);
+        // palindrome string
+        function palindromeString() {
+            let str = palStr.value;
+            let rev = "";
+            for (let i = str.length - 1; i >= 0; i--) {
+                rev += str[i];
             }
+            console.log("Palindrome String:", rev);
+            palStrResult.innerHTML = (str.toLowerCase() === rev.toLowerCase()) ? "Palindrome" : "Not Palindrome";
+        }
 
+        // STRING LENGTH WITHOUT length
+        function stringLength() {
+            let str = lenStr.value;
+            let count = 0;
+            for (let ch of str) { count++; }
+            console.log("String Length:", count);
+            lenResult.innerHTML = "Length = " + count;
+        }
 
-
-            // NAME SPLIT
-            function splitName(){
+        // NAME SPLIT
+        function splitName() {
             // remove extra spaces and split
-                let parts = fullName.value.trim().split(/\s+/);
-                console.log("Name Parts:", parts);
-                if(parts.length < 2){
+            let parts = fullName.value.trim().split(/\s+/);
+            console.log("Name Parts:", parts);
+            if (parts.length < 2) {
                 nameResult.innerHTML = "Please enter at least First and Last name";
                 return;
             }
             let firstName = parts[0];
-            let lastName  = parts[parts.length - 1];
+            let lastName = parts[parts.length - 1];
             // middle name(s)
             let middleName = "";
-            if(parts.length > 2){
+            if (parts.length > 2) {
                 middleName = parts.slice(1, parts.length - 1).join(" ");
             }
             // first initial
@@ -197,44 +179,45 @@
 
 
         // PALINDROME NUMBER
-        function palindromeNumber(){
-            let n =palNum.value;
-            let rev=n.split("").reverse().join("");
-            console.log("Palindrome Number:",rev);
-            palNumResult.innerHTML=(n===rev)? "Palindrome Number":"Not Palindrome";
+        function palindromeNumber() {
+            let n = palNum.value;
+            let rev = n.split("").reverse().join("");
+            console.log("Palindrome Number:", rev);
+            palNumResult.innerHTML = (n === rev) ? "Palindrome Number" : "Not Palindrome";
         }
 
         // ARMSTRONG
-        function armstrong(){
+        function armstrong() {
             let n = armNum.value;
-            let sum=0;
-            let temp=n;
-            let digits=n.length;
+            let sum = 0;
+            let temp = n;
+            let digits = n.length;
 
-            for(let d of n){
-                sum += Math.pow(parseInt(d),digits);
+            for (let d of n) {
+                sum += Math.pow(parseInt(d), digits);
             }
-            console.log("Armstrong Sum:",sum);
-            armResult.innerHTML=(sum == temp)? "Armstrong Number" : "Not Armstrong";
+            console.log("Armstrong Sum:", sum);
+            armResult.innerHTML = (sum == temp) ? "Armstrong Number" : "Not Armstrong";
         }
 
         // MAGIC NUMBER
-        function magicNumber(){
-            let n=magicNum.value;
+        function magicNumber() {
+            let n = magicNum.value;
 
-            function digitSum(x){
-                let s= 0;
-                for(let d of x){s+=parseInt(d);}
+            function digitSum(x) {
+                let s = 0;
+                for (let d of x) { s += parseInt(d); }
                 return s;
             }
             let sum = digitSum(n);
-            while(sum>9){
-                sum=digitSum(sum.toString());
+            while (sum > 9) {
+                sum = digitSum(sum.toString());
             }
-            console.log("Magic Number Result:",sum);
-            magicResult.innerHTML=( sum===1)?"Magic Number":"Not Magic Number";
+            console.log("Magic Number Result:", sum);
+            magicResult.innerHTML = (sum === 1) ? "Magic Number" : "Not Magic Number";
         }
-        </script>
+    </script>
 
-    </body>
+</body>
+
 </html>

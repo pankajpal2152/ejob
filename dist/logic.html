@@ -31,31 +31,55 @@
         <div class="row g-4">
 
             <!-- swap -->
-            <div class="card p-3">
-                <h5>SWAP Two Numbers</h5>
-                <input id="a" type="number" class="form-control mb-2" placeholder="Number A">
-                <input id="b" type="number" class="form-control mb-2" placeholder="Number B">
-                <button class="btn btn-primary mb-2" onclick="swapWithTemp()">Swap(3rd variable)</button>
-                <button class="btn btn-dark" onclick="swapWithoutTemp()">Swap(No 3rd
-                    variable)</button>
-                <div id="swapResult" class="result mt-2"></div>
+            <div class="col-md-4">
+                <div class="card p-3">
+                    <h5>SWAP Two Numbers</h5>
+                    <input id="a" type="number" class="form-control mb-2" placeholder="Number A">
+                    <input id="b" type="number" class="form-control mb-2" placeholder="Number B">
+                    <button class="btn btn-primary mb-2" onclick="swapWithTemp()">Swap(3rd variable)</button>
+                    <button class="btn btn-dark" onclick="swapWithoutTemp()">Swap(No 3rd variable)</button>
+                    <div id="swapResult" class="result mt-2"></div>
+                </div>
             </div>
-        </div>
 
-        <!-- Palindrome string -->
-        <div class="col-md-4">
-            <div class="card p-3">
-                <h5>Palindrome String</h5>
-                <input id="pal" type="text" class="form-control mb-2" placeholder="Enter string>
-                <button class=" btn btn-primary" onclick="checkPalindrome()">Check</button>
-                <div id="palResult" class="result mt-2"></div>
+            <!-- PALINDROME STRING -->
+            <div class="col-md-4">
+                <div class="card p-3">
+                    <h5>Palindrome String</h5>
+                    <input id="pal" type="text" class="form-control mb-2" placeholder="Enter string">
+                    <button class="btn btn-primary" onclick="checkPalindrome()">Check</button>
+                    <div id="palResult" class="result mt-2"></div>
+                </div>
             </div>
-        </div>
 
-        <!-- PRIME -->
-        <div class="col-md-4">
+            <!-- PRIME -->
+            <div class="col-md-4">
+                <div class="card p-3">
+                    <h5>Prime/Composite</h5>
+                    <input id="prime" type="number" class="form-control mb-2" placeholder="Enter number">
+                    <button class="btn btn-primary" onclick="checkPrime()">Check</button>
+                    <div id="primeResult" class="result mt-2"></div>
+                </div>
+            </div>
 
         </div>
+    </div>
+
+
+
+    <script>
+
+        // 1️⃣ SWAP USING THIRD VARIABLE
+        function swapWithTemp(){
+            let x = parseInt(a.value);
+            let y = parseInt(b.value);
+
+            console.log()
+        }
+
+
+
+    </script>
 
 </body>
 

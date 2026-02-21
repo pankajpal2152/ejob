@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>API Demo</title>
+</head>
+
+<body>
+
+    <h1>FullStack Demo</h1>
+
+    <button onclick="showUsers()">Show Users</button>
+
+    <ul id="userList"></ul>
+
+    <script>
+        async function showUsers() {
+            try {
+                const response = await fetch("http://localhost:3000/api/users");
+                const users = await response.json();
+
+                const list = document.getElementById("userList");
+                list.innerHTML = "";
+
+                users.forEach(user => {
+                    const li = document.createElement("li");
+                    li.textContent = `${user.name} — Age: ${user.age} — Salary: ${user.sal}`;
+                    list.appendChild(li);
+                });
+
+            } catch (err) {
+                console.error("Error fetching users:", err);
+            }
+        }
+    </script>
+
+</body>
+
+</html>

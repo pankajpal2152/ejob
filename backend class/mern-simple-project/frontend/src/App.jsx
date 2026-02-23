@@ -1,33 +1,48 @@
-import { useState } from "react";
-import axios from "axios";
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 
-function App() {
+const User = () => {
   const [users, setUsers] = useState([]);
+  const apiUrl = "http://localhost:3000/api/users";
 
-  const loadUsers = async () => {
+  async function getUsers() {
     try {
-      const response = await axios.get("http://localhost:5000/api/users");
+      const response = await axios.get(apiUrl);
       setUsers(response.data);
     } catch (error) {
       console.log(error);
     }
-  };
+  }
+
+  useEffect(() => {
+    getUsers();
+  }, []);
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h1>MERN Users Viewer</h1>
-
-      <button onClick={loadUsers}>Load Users</button>
-
-      <ul>
-        {users.map(user => (
-          <li key={user.id}>
-            <strong>{user.name}</strong> — {user.address.city}
-          </li>
-        ))}
-      </ul>
+    <div>
+      <h2>Showing All Users:</h2>
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Languages</th>
+            <th>Address</th>
+          </tr>
+        </thead>
+        <tbody>
+          {users.map((user, index) => (
+            <tr key={index}>
+              <td>{user.name}</td>
+              <td>{user.languages.join(", ")}</td>
+              <td>
+                State: {user.address.state} | City: {user.address.city} | Pin: {user.address.pinCode}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
-}
+};
 
-export default App;
+export default User;

@@ -1,57 +1,53 @@
-const express = require('express');
-const cors = require('cors');
+// Creating Basic WebServer API using Express.
+import express from 'express';
+import cors from 'cors';
+
+// Static JSON users array
+const users = [
+    { id: 1, name: "John", languages: ['Bengali', 'Hindi'], address: { state: 'wb', city: 'Kol', pinCode: 712235 } },
+    { id: 2, name: "Rohit", languages: ['Hindi', 'Urdu', 'English'], address: { state: 'Punjab', city: 'Amritsar', pinCode: 615545 } },
+    { id: 3, name: 'Rahul', languages: ['Hindi', 'Bengali', 'English'], address: { state: 'WB', city: 'Howrah', pinCode: 7122056 } }
+];
+
+const host = 'localhost';
+const port = 3000;
 
 const app = express();
 
 app.use(cors());
-app.use(express.json());
-
-const users = [
-    {
-        id: 1,
-        name: 'John Doe',
-        email: 'john@example.com',
-        languages: ['JavaScript', 'Python'],
-        address: { state: "WB", city: "Kolkata", pinCode: 700102 }
-    },
-    {
-        id: 2,
-        name: 'Jane Smith',
-        email: 'jane.smith@example.com',
-        languages: ['Python', 'Java'],
-        address: { state: "MH", city: "Mumbai", pinCode: 400001 }
-    },
-    {
-        id: 3,
-        name: 'Rahul',
-        languages: ['Hindi', 'Bengali', 'English'],
-        address: { state: 'WB', city: 'Howrah', pinCode: 712205 }
-    }
-];
-
-const PORT = process.env.PORT || 5000;
 
 app.get("/", (req, res) => {
-    res.send("<h1>Welcome to the User API</h1>");
+    res.send("<h1>Welcome to Express</h1>");
 });
 
 app.get("/api/users", (req, res) => {
     res.status(200).json(users);
 });
 
-app.get("/health", (req, res) => {
-    res.json({ status: "OK", uptime: process.uptime() });
+app.get("/api/users/:uid", (req, res) => {
+    const userId = req.params.uid;
+    const singleUser = users.find(user => user.id == userId);
+
+    if (!singleUser) {
+        res.status(404).json({ message: "No user found!" });
+    } else {
+        res.status(200).json(singleUser);
+    }
 });
 
-app.use((req, res) => {
-    res.status(404).json({ message: "Route not found" });
+app.get("/api/users/state/:state", (req, res) => {
+    const state = req.params.state;
+    const newUsers = users.filter(user =>
+        user.address.state.toLowerCase().includes(state.toLowerCase())
+    );
+
+    if (newUsers.length === 0) {
+        res.status(404).json({ message: "No such users found!" });
+    } else {
+        res.status(200).json(newUsers);
+    }
 });
 
-app.use((err, req, res, next) => {
-    console.error(err.stack);
-    res.status(500).json({ message: "Something went wrong" });
-});
-
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+app.listen(port, host, () => {
+    console.log(`Express server started at http://${host}:${port}`);
 });

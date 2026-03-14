@@ -1,30 +1,29 @@
 import { useState } from "react";
 import DoorBell from "./components/DoorBell";
 import FanRoom from "./components/FanRoom";
+import "./App.css";
 
 function App() {
 
-  const [insideRoom, setInsideRoom] = useState(false);
+  const [roomOpen, setRoomOpen] = useState(false);
 
   const enterRoom = () => {
-    setInsideRoom(true);
+    setRoomOpen(true);
   };
 
   const leaveRoom = () => {
-    setInsideRoom(false);
+    setRoomOpen(false);
   };
 
   return (
-    <div style={{ textAlign: "center", marginTop: "40px" }}>
+    <div className="app">
 
-      <h1>🏠 Smart Door Bell App</h1>
+      <h1>🏠 Smart Home System</h1>
 
       {
-        insideRoom ? (
-          <FanRoom leaveRoom={leaveRoom} />
-        ) : (
-          <DoorBell enterRoom={enterRoom} />
-        )
+        roomOpen
+        ? <FanRoom leaveRoom={leaveRoom}/>
+        : <DoorBell enterRoom={enterRoom}/>
       }
 
     </div>

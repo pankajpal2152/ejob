@@ -1,0 +1,39 @@
+body{
+font-family: Arial;
+background:#0f172a;
+color:white;
+}
+
+.app{
+text-align:center;
+margin-top:80px;
+}
+
+.bell-btn{
+font-size:20px;
+padding:15px 30px;
+border:none;
+background:#22c55e;
+color:white;
+border-radius:8px;
+cursor:pointer;
+}
+
+.room{
+margin-top:40px;
+}
+
+.fan{
+font-size:80px;
+margin:20px;
+}
+
+.leave-btn{
+padding:12px 25px;
+background:#ef4444;
+border:none;
+border-radius:8px;
+color:white;
+font-size:16px;
+cursor:pointer;
+}

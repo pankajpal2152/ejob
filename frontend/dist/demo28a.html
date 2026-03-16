@@ -11,6 +11,39 @@
 
     <h2>User Salary Report</h2>
     <div id="output"></div>
+    <script>
+        var users = [
+            { id: 1, name: "John", sal: 23000 },
+            { id: 2, name: "Diana", sal: 12000 },
+            { id: 3, name: "Russel", sal: 17000 }
+        ];
+        // Total Salary
+        let totalSal = users.reduce((sum, u) => sum + u.sal, 0);
+        // Average Salary
+        let avgSal = totalSal / users.length;
+        // Highest Salary
+        let maxSal = Math.max(...users.map(u => u.sal));
+        // Lowest Salary
+        let minSal = Math.min(...users.map(u => u.sal));
+        // Users between 10000 and 20000
+        let betweenUsers = users.filter(u => u.sal >= 10000 && u.sal <= 20000);
+        // Users outside 10000 and 20000
+        let outsideUsers = users.filter(u => u.sal < 10000 || u.sal > 20000);
+
+        // Display
+        document.getElementById("output").innerHTML = `
+            <p><b>Total Salary:</b> ${totalSal}</p><br>
+            <p><b>Average Salary:</b> ${avgSal}</p><br>
+            <p><b>Highest Salary:</b> ${maxSal}</p><br>
+            <p><b>Lowest Salary:</b> ${minSal}</p><br>
+
+            <p><b>Users between 10000 and 20000:</b><br> ${betweenUsers.map(u => u.name + ":" + u.sal).join("<br>")}</p>
+
+            <br><br>
+            
+            <p><b>Users outside 10000 and 20000:</b><br> ${outsideUsers.map(u => u.name + ":" + u.sal).join("<br>")}</p>
+        `;
+    </script>
 
 </body>
 

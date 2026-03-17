@@ -26,7 +26,7 @@ const Posts = () => {
     console.log(posts);
     return (
         <div className='container card p-3 m-3'>
-            {loading && (<p align="center" className='text-danger'><img src='./images/sample.gif' height="111px" width="111px"/></p>)}
+            {loading && (<p align="center" className='text-danger'><img src='./images/sample.gif' height="111px" width="111px" /></p>)}
             {!loading && (
                 <table className='table table-hover'>
                     <thead>

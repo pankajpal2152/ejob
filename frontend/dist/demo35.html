@@ -17,13 +17,13 @@
             { id: 6, name: "joe", sal: 31000 }
         ];
         // Task : Please select those users whose salary is between 15k-25k
-        let myUsers=users.filter((user)=>(user.sal>=15000 && user.sal<=25000));
+        let myUsers = users.filter((user) => (user.sal >= 15000 && user.sal <= 25000));
         console.log(myUsers);
         // Task : Please select those users whose salary not is between 15k-25k
-        let myUsers2=users.filter((user)=>!(user.sal>=15000 && user.sal<=25000));
+        let myUsers2 = users.filter((user) => !(user.sal >= 15000 && user.sal <= 25000));
         console.log(myUsers2);
         // find out those users whose name begins with 'j'
-        let myUsers3=users.filter((user)=>(user.name.toLowerCase().startsWith('j')));
+        let myUsers3 = users.filter((user) => (user.name.toLowerCase().startsWith('j')));
         console.log(myUsers3);
         // Find out those users whose name contains ah
         // includes()

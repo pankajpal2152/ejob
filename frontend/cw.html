@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+
+        button {
+            padding: 8px 12px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .instock {
+            font-weight: bold;
+            color: green;
+        }
+
+        .outstock {
+            font-weight: bold;
+            color: red;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h2>🛒 Product Dashboard</h2>
+    <!-- Buttons -->
+    <button onclick="showInStock()">Show In Stock</button>
+    <button onclick="sortPrice()">Sort Price ↓</button>
+    <button onclick="resetData()">Reset</button>
+
+    <!-- Category Count -->
+    <h3>📊 Category Count</h3>
+    <div id="categoryCount"></div>
+
+    <!-- Table -->
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Rating</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+
+        <tbody id="tbody"></tbody>
+    </table>
+
+    <script>
+        // ================= DATA =================
+        const products = [
+            { id: 101, name: "Wireless Headphones", price: 2499, category: "Electronics", rating: 4.5, inStock: true },
+            { id: 102, name: "Office Chair", price: 7999, category: "Furniture", rating: 4.2, inStock: false },
+            { id: 103, name: "Smart Watch", price: 3999, category: "Electronics", rating: 4.6, inStock: true }
+        ];
+
+        // ================= RENDER TABLE =================
+        function render(arr) {
+            document.getElementById("tbody").innerHTML =
+                arr.map(p => `
+  <tr>
+    <td>${p.id}</td>
+    <td>${p.name}</td>
+    <td>₹${p.price}</td>
+    <td>${p.category}</td>
+    <td>${p.rating}</td>
+    <td class="${p.inStock ? 'instock' : 'outstock'}">
+      ${p.inStock ? "In Stock" : "Out of Stock"}
+    </td>
+  </tr>
+ `).join("");
+        }
+
+        // ================= CATEGORY COUNT =================
+        function showCategoryCount() {
+            const count = products.reduce((acc, p) => {
+                acc[p.category] = (acc[p.category] || 0) + 1;
+                return acc;
+            }, {});
+
+            let html = "";
+
+            for (let key in count) {
+                html += `<p>${key}: ${count[key]}</p>`;
+            }
+
+            document.getElementById("categoryCount").innerHTML = html;
+        }
+
+        // ================= BUTTON FUNCTIONS =================
+
+        // Show In Stock
+        function showInStock() {
+            let filtered = products.filter(p => p.inStock);
+            render(filtered);
+        }
+
+        // Sort Price Desc
+        function sortPrice() {
+            let sorted = [...products].sort((a, b) => b.price - a.price);
+            render(sorted);
+        }
+
+        // Reset
+        function resetData() {
+            render(products);
+        }
+
+        // ================= INITIAL LOAD =================
+        render(products);
+        showCategoryCount();
+
+    </script>
+
+</body>
+
+</html>

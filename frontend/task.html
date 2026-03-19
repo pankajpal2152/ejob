@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Assignment</title>
+</head>
+
+<body>
+    <h2>Employee Data Processing</h2>
+    <script>
+        // =============================
+        // Dataset
+        // =============================
+        const employees = [
+            { empid: 1001, name: 'John', sal: 12000, doj: '02-12-2021' },
+            { empid: 1002, name: 'Diana', sal: 21000, doj: '08-18-2020' },
+            { empid: 1003, name: 'Dean', sal: 22000, doj: '12-12-2022' },
+            { empid: 1004, name: 'Joe', sal: 14000, doj: '09-09-2020' }
+        ];
+        console.log("Original Employees:", employees);
+        // =============================
+        // Task 1: Sort by Salary
+        // =============================
+
+        // Ascending
+        let ascSalary = [...employees].sort((a, b) => a.sal - b.sal);
+        console.log("Salary Ascending:", ascSalary);
+
+        // Descending
+        let descSalary = [...employees].sort((a, b) => b.sal - a.sal);
+        console.log("Salary Descending:", descSalary);
+
+        // =============================
+        // Task 2: Third Highest Salary
+        // =============================
+
+        let thirdHighest = [...employees].sort((a, b) => b.sal - a.sal)[2];
+        console.log("Third Highest Salary:", thirdHighest);
+
+        // =============================
+        // Task 3: Calculate Work Experience
+        // =============================
+
+        let today = new Date();
+        let employeesWithExp = employees.map(emp => {
+            let doj = new Date(emp.doj);
+            let years = today.getFullYear() - doj.getFullYear();
+
+            return { ...emp, experience: years };
+        })
+        console.log("Employees with Experience:", employeesWithExp);
+
+        // =============================
+        // Task 4: Employees Working Between 2 and 5 Years
+        // =============================
+
+        let exp2to5 = employeesWithExp.filter(emp => emp.experience >= 2 && emp.experience <= 5);
+        console.log("Employees with 2-5 Years Experience:", exp2to5);
+
+        // =============================
+        // Task 5: Employees NOT Working Between 2 and 5 Years
+        // =============================
+
+        // let notExp2to5 = employeesWithExp.filter(emp => emp.experience < 2 || emp.experience > 5);
+        // console.log("Employees NOT with 2-5 Years Experience:", notExp2to5);
+
+        let notExp2to5 = employeesWithExp.filter(emp =>
+            !(emp.experience >= 2 && emp.experience <= 5)
+        );
+        console.log("Employees NOT with 2-5 Years Experience:", notExp2to5);
+
+        // =============================
+        // Task 6: Employees Whose Name Begins With 'J'
+        // =============================
+
+        let nameStartsWithJ = employees.filter(emp => emp.name.toLowerCase().startsWith('j'));
+        console.log("Employees with Name Starting with 'J':", nameStartsWithJ);
+
+        // =============================
+        // Task 7: Salary Statistics
+        // =============================
+
+        let stats = employees.reduce((acc, emp) => {
+            acc.total += emp.sal;
+            acc.min = Math.min(acc.min, emp.sal);
+            acc.max = Math.max(acc.max, emp.sal);
+            return acc;
+        }, {
+            total: 0, min: Infinity,
+            max: -Infinity
+        });
+
+        stats.average = stats.total / employees.length;
+        console.log("Salary Statistics:", stats);
+
+    </script>
+
+</body>
+
+</html>

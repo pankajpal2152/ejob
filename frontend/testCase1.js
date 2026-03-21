@@ -1,80 +1,48 @@
 /*
 Custom Type Creation in TypeScript
 */
-
 // ================= BASE TYPE =================
-
-type User = {
-    id: number;
-    name: string;
-    age?: number; // Optional
-    readonly gender?: string; // Readonly+optional
-};
-
-// ================= BASE TYPE =================
-const user1: User = {
+var user1 = {
     id: 101,
     name: "Alice",
 };
-
-const user2: User = {
+var user2 = {
     id: 102,
     name: "Bob",
     age: 25
 };
-
-const user3: User = {
+var user3 = {
     id: 103,
     name: "Charlie",
     gender: "Male"
 };
-
 // ================= USER OBJECTS =================
-
 console.log("User1:", user1);
 console.log("User2:", user2);
 console.log("User3:", user3);
-
 // ================= UPDATE =================
 // ✔ Allowed (optional property)
 user3.age = 33;
-
 // ❌ Not allowed (readonly property)
 // user3.gender = "Male"; // ERROR
-
 console.log("Updated User3:", user3);
-
 // ================= FUNCTION USING TYPE =================
-
-function printUser(user: User): void {
-    console.log(`User -> ID: ${user.id}, Name:${user.name}`);
+function printUser(user) {
+    console.log("User -> ID: ".concat(user.id, ", Name:").concat(user.name));
 }
-
 printUser(user1);
 printUser(user2);
-
-// ================= EXTENDED TYPE =================
-
-type Admin = User & {
-    role: string;
-};
-
-const admin1: Admin = {
+var admin1 = {
     id: 201,
     name: "Admin Alice",
     role: "Super Admin",
     age: 30
 };
-
 console.log("Admin1:", admin1);
-
 // ================= ARRAY OF USERS =================
-
-const users: User[] = [user1, user2, user3];
-
+var users = [user1, user2, user3];
 console.log("All Users:", users);
-
 // ================= LOOP THROUGH USERS =================
-users.forEach((u) => {
-    console.log(`ID: ${u.id}, Name: ${u.name}`);
+users.forEach(function (u) {
+    console.log("ID: ".concat(u.id, ", Name: ").concat(u.name));
 });
